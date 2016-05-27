@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ScappleDocument Version="1.1" ID="6937FFF9-3C49-4F98-BE67-D1C8B7DE1316">
+    <Notes>
+        <Note ID="0" FontSize="18.0" Position="47.201849,124.980777" Width="95.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="5" Style="Square"></Border>
+                <Fill>0.43017 0.940019 0.56512</Fill>
+            </Appearance>
+            <String>blank.docx</String>
+            <ConnectedNoteIDs>1, 27</ConnectedNoteIDs>
+            <PointsToNoteIDs>1, 27</PointsToNoteIDs>
+        </Note>
+        <Note ID="1" FontSize="12.0" Position="71.265993,201.546704" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>extract</String>
+            <ConnectedNoteIDs>0, 2</ConnectedNoteIDs>
+            <PointsToNoteIDs>2</PointsToNoteIDs>
+        </Note>
+        <Note ID="2" FontSize="15.0" Position="66.730083,265.551501" Width="49.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="3" Style="Square"></Border>
+                <Fill>0.940019 0.594463 0.712502</Fill>
+            </Appearance>
+            <String>blank/</String>
+            <ConnectedNoteIDs>1, 20</ConnectedNoteIDs>
+            <PointsToNoteIDs>20</PointsToNoteIDs>
+        </Note>
+        <Note ID="20" FontSize="12.0" Position="70.94527,351.343716" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>prettify</String>
+            <ConnectedNoteIDs>2, 28</ConnectedNoteIDs>
+            <PointsToNoteIDs>28</PointsToNoteIDs>
+        </Note>
+        <Note ID="21" FontSize="12.0" Position="143.332742,492.020388" Width="24.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>diff</String>
+            <ConnectedNoteIDs>28-30</ConnectedNoteIDs>
+            <PointsToNoteIDs>30</PointsToNoteIDs>
+        </Note>
+        <Note ID="22" FontSize="18.0" Position="178.716514,122.855503" Width="91.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="5" Style="Square"></Border>
+                <Fill>0.341353 0.738199 0.450535</Fill>
+            </Appearance>
+            <String>exp1.docx</String>
+            <ConnectedNoteIDs>23, 27, 40</ConnectedNoteIDs>
+            <PointsToNoteIDs>23, 40</PointsToNoteIDs>
+        </Note>
+        <Note ID="23" FontSize="12.0" Position="198.83192,200.205421" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>extract</String>
+            <ConnectedNoteIDs>22, 24</ConnectedNoteIDs>
+            <PointsToNoteIDs>24</PointsToNoteIDs>
+        </Note>
+        <Note ID="24" FontSize="15.0" Position="194.534497,264.777926" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="3" Style="Square"></Border>
+                <Fill>0.662491 0.421341 0.50544</Fill>
+            </Appearance>
+            <String>exp1/</String>
+            <ConnectedNoteIDs>23, 25</ConnectedNoteIDs>
+            <PointsToNoteIDs>25</PointsToNoteIDs>
+        </Note>
+        <Note ID="25" FontSize="12.0" Position="192.443077,346.686232" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>prettify</String>
+            <ConnectedNoteIDs>24, 29</ConnectedNoteIDs>
+            <PointsToNoteIDs>29</PointsToNoteIDs>
+        </Note>
+        <Note ID="27" FontSize="12.0" Position="148.887978,64.932943" Width="28.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.927721 0.940019 0.464936</Fill>
+            </Appearance>
+            <String>edit</String>
+            <ConnectedNoteIDs>0, 22</ConnectedNoteIDs>
+            <PointsToNoteIDs>22</PointsToNoteIDs>
+        </Note>
+        <Note ID="28" FontSize="15.0" Position="46.036278,413.381271" Width="86.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="3" Style="Square"></Border>
+                <Fill>0.691035 0.655422 0.940019</Fill>
+            </Appearance>
+            <String>prettyblank/</String>
+            <ConnectedNoteIDs>20-21</ConnectedNoteIDs>
+            <PointsToNoteIDs>21</PointsToNoteIDs>
+        </Note>
+        <Note ID="29" FontSize="15.0" Position="168.319036,411.560821" Width="83.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="3" Style="Square"></Border>
+                <Fill>0.561377 0.532447 0.763645</Fill>
+            </Appearance>
+            <String>prettyexp1/</String>
+            <ConnectedNoteIDs>21, 25, 37</ConnectedNoteIDs>
+            <PointsToNoteIDs>21, 37</PointsToNoteIDs>
+        </Note>
+        <Note ID="30" FontSize="12.0" Position="134.036278,567.563425" Width="48.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Cloud"></Border>
+                <Fill>0.940019 0.412851 0.398718</Fill>
+            </Appearance>
+            <String>diffdata</String>
+            <ConnectedNoteIDs>21, 43</ConnectedNoteIDs>
+            <PointsToNoteIDs>43</PointsToNoteIDs>
+        </Note>
+        <Note ID="31" FontSize="26.0" Position="107.561087,717.824938" Width="101.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="5" Style="Square"></Border>
+                <Fill>0.940019 0.212258 0.346476</Fill>
+            </Appearance>
+            <String>exp1.rst</String>
+            <ConnectedNoteIDs>41, 43</ConnectedNoteIDs>
+            <PointsToNoteIDs>41</PointsToNoteIDs>
+        </Note>
+        <Note ID="32" FontSize="18.0" Position="321.135237,120.057394" Width="91.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="5" Style="Square"></Border>
+                <Fill>0.263893 0.571376 0.356203</Fill>
+            </Appearance>
+            <String>exp2.docx</String>
+            <ConnectedNoteIDs>33, 40</ConnectedNoteIDs>
+            <PointsToNoteIDs>33</PointsToNoteIDs>
+        </Note>
+        <Note ID="33" FontSize="12.0" Position="336.830412,201.786424" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>extract</String>
+            <ConnectedNoteIDs>32, 34</ConnectedNoteIDs>
+            <PointsToNoteIDs>34</PointsToNoteIDs>
+        </Note>
+        <Note ID="34" FontSize="15.0" Position="330.408537,269.573019" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="3" Style="Square"></Border>
+                <Fill>0.535651 0.340671 0.408668</Fill>
+            </Appearance>
+            <String>exp2/</String>
+            <ConnectedNoteIDs>33, 35</ConnectedNoteIDs>
+            <PointsToNoteIDs>35</PointsToNoteIDs>
+        </Note>
+        <Note ID="35" FontSize="12.0" Position="330.160593,345.368387" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>prettify</String>
+            <ConnectedNoteIDs>34, 36</ConnectedNoteIDs>
+            <PointsToNoteIDs>36</PointsToNoteIDs>
+        </Note>
+        <Note ID="36" FontSize="15.0" Position="306.164979,410.933354" Width="83.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="3" Style="Square"></Border>
+                <Fill>0.454041 0.43256 0.622058</Fill>
+            </Appearance>
+            <String>prettyexp2/</String>
+            <ConnectedNoteIDs>35, 37</ConnectedNoteIDs>
+            <PointsToNoteIDs>37</PointsToNoteIDs>
+        </Note>
+        <Note ID="37" FontSize="12.0" Position="277.707879,492.083573" Width="24.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>diff</String>
+            <ConnectedNoteIDs>29, 36, 38</ConnectedNoteIDs>
+            <PointsToNoteIDs>38</PointsToNoteIDs>
+        </Note>
+        <Note ID="38" FontSize="12.0" Position="269.725286,560.277241" Width="48.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Cloud"></Border>
+                <Fill>0.77522 0.34068 0.333277</Fill>
+            </Appearance>
+            <String>diffdata</String>
+            <ConnectedNoteIDs>37, 44</ConnectedNoteIDs>
+            <PointsToNoteIDs>44</PointsToNoteIDs>
+        </Note>
+        <Note ID="39" FontSize="26.0" Position="243.039979,713.198019" Width="101.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="5" Style="Square"></Border>
+                <Fill>0.751353 0.176679 0.285004</Fill>
+            </Appearance>
+            <String>exp2.rst</String>
+            <ConnectedNoteIDs>41, 44</ConnectedNoteIDs>
+            <PointsToNoteIDs>41</PointsToNoteIDs>
+        </Note>
+        <Note ID="40" FontSize="12.0" Position="287.852616,68.234478" Width="28.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.927721 0.940019 0.464936</Fill>
+            </Appearance>
+            <String>edit</String>
+            <ConnectedNoteIDs>22, 32</ConnectedNoteIDs>
+            <PointsToNoteIDs>32</PointsToNoteIDs>
+        </Note>
+        <Note ID="41" FontSize="12.0" Position="208.922929,800.492016" Width="43.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.927721 0.940019 0.464936</Fill>
+            </Appearance>
+            <String>sphinx</String>
+            <ConnectedNoteIDs>31, 39, 42</ConnectedNoteIDs>
+            <PointsToNoteIDs>42</PointsToNoteIDs>
+        </Note>
+        <Note ID="42" FontSize="35.0" Position="157.431152,867.279297" Width="149.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="5" Style="Square"></Border>
+                <Fill>0.112132 0.625461 0.940019</Fill>
+            </Appearance>
+            <String>report.rst</String>
+            <ConnectedNoteIDs>41</ConnectedNoteIDs>
+        </Note>
+        <Note ID="43" FontSize="12.0" Position="135.904974,645.037383" Width="43.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.927721 0.940019 0.464936</Fill>
+            </Appearance>
+            <String>format</String>
+            <ConnectedNoteIDs>30-31</ConnectedNoteIDs>
+            <PointsToNoteIDs>31</PointsToNoteIDs>
+        </Note>
+        <Note ID="44" FontSize="12.0" Position="267.876876,640.134423" Width="43.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.927721 0.940019 0.464936</Fill>
+            </Appearance>
+            <String>format</String>
+            <ConnectedNoteIDs>38-39</ConnectedNoteIDs>
+            <PointsToNoteIDs>39</PointsToNoteIDs>
+        </Note>
+        <Note ID="45" FontSize="31.0" Position="679.739103,247.645567" Width="102.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>extract</String>
+            <ConnectedNoteIDs>50-51</ConnectedNoteIDs>
+        </Note>
+        <Note ID="46" FontSize="12.0" Position="886.739103,297.645567" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Cloud"></Border>
+                <Fill>0.940019 0.400834 0.686983</Fill>
+            </Appearance>
+            <String>ZipFile</String>
+            <ConnectedNoteIDs>47-48</ConnectedNoteIDs>
+        </Note>
+        <Note ID="47" FontSize="12.0" Position="863.739103,380.645567" Width="91.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>.extractall(path)</String>
+            <ConnectedNoteIDs>46, 51-52</ConnectedNoteIDs>
+            <PointsToNoteIDs>52</PointsToNoteIDs>
+        </Note>
+        <Note ID="48" FontSize="12.0" Position="874.739103,222.645567" Width="68.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>ZipFile(file)</String>
+            <ConnectedNoteIDs>46, 53</ConnectedNoteIDs>
+            <PointsToNoteIDs>46</PointsToNoteIDs>
+        </Note>
+        <Note ID="49" FontSize="12.0" Position="876.739103,71.645567" Width="67.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.685753 0.940019 0.536445</Fill>
+            </Appearance>
+            <String>some.docx</String>
+            <ConnectedNoteIDs>53</ConnectedNoteIDs>
+            <PointsToNoteIDs>53</PointsToNoteIDs>
+        </Note>
+        <Note ID="50" FontSize="12.0" Position="666.739103,151.645567" Width="128.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>_config_source_path()</String>
+            <ConnectedNoteIDs>45, 53</ConnectedNoteIDs>
+            <PointsToNoteIDs>53</PointsToNoteIDs>
+        </Note>
+        <Note ID="51" FontSize="12.0" Position="655.739103,384.645567" Width="150.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>_config_destination_path()</String>
+            <ConnectedNoteIDs>45, 47</ConnectedNoteIDs>
+            <PointsToNoteIDs>47</PointsToNoteIDs>
+        </Note>
+        <Note ID="52" FontSize="12.0" Position="890.739103,453.645567" Width="41.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.564562 0.772971 0.445027</Fill>
+            </Appearance>
+            <String>some/</String>
+            <ConnectedNoteIDs>47</ConnectedNoteIDs>
+        </Note>
+        <Note ID="53" FontSize="12.0" Position="875.739103,146.645567" Width="67.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.877938 0.823152 0.940019</Fill>
+            </Appearance>
+            <String>open(path)</String>
+            <ConnectedNoteIDs>48-50</ConnectedNoteIDs>
+            <PointsToNoteIDs>48</PointsToNoteIDs>
+        </Note>
+        <Note ID="54" FontSize="31.0" Position="675.681392,831.311646" Width="102.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>prettify</String>
+            <ConnectedNoteIDs>59, 68</ConnectedNoteIDs>
+        </Note>
+        <Note ID="55" FontSize="12.0" Position="896.681392,545.311646" Width="52.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.685753 0.940019 0.536445</Fill>
+            </Appearance>
+            <String>ugly.xml</String>
+            <ConnectedNoteIDs>58</ConnectedNoteIDs>
+            <PointsToNoteIDs>58</PointsToNoteIDs>
+        </Note>
+        <Note ID="58" FontSize="12.0" Position="889.681392,628.311646" Width="67.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.877938 0.823152 0.940019</Fill>
+            </Appearance>
+            <String>open(path)</String>
+            <ConnectedNoteIDs>55, 59, 61</ConnectedNoteIDs>
+            <PointsToNoteIDs>61</PointsToNoteIDs>
+        </Note>
+        <Note ID="59" FontSize="12.0" Position="662.681392,628.311646" Width="128.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>_config_source_path()</String>
+            <ConnectedNoteIDs>54, 58</ConnectedNoteIDs>
+            <PointsToNoteIDs>58</PointsToNoteIDs>
+        </Note>
+        <Note ID="61" FontSize="12.0" Position="897.681392,701.311646" Width="51.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Cloud"></Border>
+                <Fill>0.696005 0.799241 0.940019</Fill>
+            </Appearance>
+            <String>ugly_str</String>
+            <ConnectedNoteIDs>58, 62</ConnectedNoteIDs>
+            <PointsToNoteIDs>62</PointsToNoteIDs>
+        </Note>
+        <Note ID="62" FontSize="12.0" Position="840.681392,772.311646" Width="165.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>BeautifulSoup(markup, “xml”)</String>
+            <ConnectedNoteIDs>61, 63</ConnectedNoteIDs>
+            <PointsToNoteIDs>63</PointsToNoteIDs>
+        </Note>
+        <Note ID="63" FontSize="12.0" Position="881.681392,833.311646" Width="83.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Cloud"></Border>
+                <Fill>0.940019 0.400834 0.686983</Fill>
+            </Appearance>
+            <String>BeautifulSoup</String>
+            <ConnectedNoteIDs>62, 65</ConnectedNoteIDs>
+            <PointsToNoteIDs>65</PointsToNoteIDs>
+        </Note>
+        <Note ID="65" FontSize="12.0" Position="894.681392,901.311646" Width="56.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>.prettify()</String>
+            <ConnectedNoteIDs>63, 66</ConnectedNoteIDs>
+            <PointsToNoteIDs>66</PointsToNoteIDs>
+        </Note>
+        <Note ID="66" FontSize="12.0" Position="893.681392,963.311646" Width="59.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Cloud"></Border>
+                <Fill>0.696005 0.799241 0.940019</Fill>
+            </Appearance>
+            <String>pretty_str</String>
+            <ConnectedNoteIDs>65, 67</ConnectedNoteIDs>
+            <PointsToNoteIDs>67</PointsToNoteIDs>
+        </Note>
+        <Note ID="67" FontSize="12.0" Position="877.681392,1037.311646" Width="90.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.877938 0.823152 0.940019</Fill>
+            </Appearance>
+            <String>open(path, “w”)</String>
+            <ConnectedNoteIDs>66, 68-69</ConnectedNoteIDs>
+            <PointsToNoteIDs>69</PointsToNoteIDs>
+        </Note>
+        <Note ID="68" FontSize="12.0" Position="651.681392,1033.311646" Width="150.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>_config_destination_path()</String>
+            <ConnectedNoteIDs>54, 67</ConnectedNoteIDs>
+            <PointsToNoteIDs>67</PointsToNoteIDs>
+        </Note>
+        <Note ID="69" FontSize="12.0" Position="892.681392,1104.311646" Width="60.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.564562 0.772971 0.445027</Fill>
+            </Appearance>
+            <String>pretty.xml</String>
+            <ConnectedNoteIDs>67</ConnectedNoteIDs>
+        </Note>
+        <Note ID="70" FontSize="31.0" Position="670.022621,1631.920013" Width="89.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>filediff</String>
+            <ConnectedNoteIDs>83, 100</ConnectedNoteIDs>
+        </Note>
+        <Note ID="71" FontSize="12.0" Position="847.888213,1835.342686" Width="94.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>unified_diff(a, b)</String>
+            <ConnectedNoteIDs>75-77</ConnectedNoteIDs>
+            <PointsToNoteIDs>77</PointsToNoteIDs>
+        </Note>
+        <Note ID="72" FontSize="12.0" Position="818.888213,1635.342686" Width="38.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.685753 0.940019 0.536445</Fill>
+            </Appearance>
+            <String>A.xml</String>
+            <ConnectedNoteIDs>81</ConnectedNoteIDs>
+            <PointsToNoteIDs>81</PointsToNoteIDs>
+        </Note>
+        <Note ID="73" FontSize="12.0" Position="928.888213,1636.342686" Width="38.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.685753 0.940019 0.536445</Fill>
+            </Appearance>
+            <String>B.xml</String>
+            <ConnectedNoteIDs>82</ConnectedNoteIDs>
+            <PointsToNoteIDs>82</PointsToNoteIDs>
+        </Note>
+        <Note ID="75" FontSize="12.0" Position="817.888213,1767.342686" Width="37.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Cloud"></Border>
+                <Fill>0.696005 0.799241 0.940019</Fill>
+            </Appearance>
+            <String>A_str</String>
+            <ConnectedNoteIDs>71, 81</ConnectedNoteIDs>
+            <PointsToNoteIDs>71</PointsToNoteIDs>
+        </Note>
+        <Note ID="76" FontSize="12.0" Position="922.888213,1762.342686" Width="37.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Cloud"></Border>
+                <Fill>0.696005 0.799241 0.940019</Fill>
+            </Appearance>
+            <String>B_str</String>
+            <ConnectedNoteIDs>71, 82</ConnectedNoteIDs>
+            <PointsToNoteIDs>71</PointsToNoteIDs>
+        </Note>
+        <Note ID="77" FontSize="12.0" Position="874.888213,1897.342686" Width="56.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Cloud"></Border>
+                <Fill>0.696005 0.799241 0.940019</Fill>
+            </Appearance>
+            <String>diff_lines</String>
+            <ConnectedNoteIDs>71, 80</ConnectedNoteIDs>
+            <PointsToNoteIDs>80</PointsToNoteIDs>
+        </Note>
+        <Note ID="79" FontSize="12.0" Position="875.888213,2035.342686" Width="40.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.564562 0.772971 0.445027</Fill>
+            </Appearance>
+            <String>diff.txt</String>
+            <ConnectedNoteIDs>80</ConnectedNoteIDs>
+        </Note>
+        <Note ID="80" FontSize="12.0" Position="852.888213,1967.342686" Width="90.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.877938 0.823152 0.940019</Fill>
+            </Appearance>
+            <String>open(path, “w”)</String>
+            <ConnectedNoteIDs>77, 79, 83</ConnectedNoteIDs>
+            <PointsToNoteIDs>79</PointsToNoteIDs>
+        </Note>
+        <Note ID="81" FontSize="12.0" Position="802.888213,1696.342686" Width="67.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.877938 0.823152 0.940019</Fill>
+            </Appearance>
+            <String>open(path)</String>
+            <ConnectedNoteIDs>72, 75, 100</ConnectedNoteIDs>
+            <PointsToNoteIDs>75</PointsToNoteIDs>
+        </Note>
+        <Note ID="82" FontSize="12.0" Position="925.888213,1697.342686" Width="67.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.877938 0.823152 0.940019</Fill>
+            </Appearance>
+            <String>open(path)</String>
+            <ConnectedNoteIDs>73, 76, 100</ConnectedNoteIDs>
+            <PointsToNoteIDs>76</PointsToNoteIDs>
+        </Note>
+        <Note ID="83" FontSize="12.0" Position="692.657954,1877.693198" Width="150.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>_config_destination_path()</String>
+            <ConnectedNoteIDs>70, 80</ConnectedNoteIDs>
+            <PointsToNoteIDs>80</PointsToNoteIDs>
+        </Note>
+        <Note ID="86" FontSize="31.0" Position="650.320313,1351.199219" Width="84.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>dirdiff</String>
+            <ConnectedNoteIDs>98-99, 101-102</ConnectedNoteIDs>
+        </Note>
+        <Note ID="87" FontSize="12.0" Position="874.806052,1197.040241" Width="20.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.685753 0.940019 0.536445</Fill>
+            </Appearance>
+            <String>A/</String>
+            <ConnectedNoteIDs>89</ConnectedNoteIDs>
+            <PointsToNoteIDs>89</PointsToNoteIDs>
+        </Note>
+        <Note ID="88" FontSize="12.0" Position="938.399678,1198.896887" Width="20.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.685753 0.940019 0.536445</Fill>
+            </Appearance>
+            <String>B/</String>
+            <ConnectedNoteIDs>89</ConnectedNoteIDs>
+            <PointsToNoteIDs>89</PointsToNoteIDs>
+        </Note>
+        <Note ID="89" FontSize="12.0" Position="883.763765,1255.06777" Width="73.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>dircmp(a, b)</String>
+            <ConnectedNoteIDs>87-88, 101-102, 104</ConnectedNoteIDs>
+            <PointsToNoteIDs>104</PointsToNoteIDs>
+        </Note>
+        <Note ID="91" FontSize="12.0" Position="796.49226,1331.688999" Width="65.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>.left_only()</String>
+            <ConnectedNoteIDs>98, 104</ConnectedNoteIDs>
+            <PointsToNoteIDs>98</PointsToNoteIDs>
+        </Note>
+        <Note ID="92" FontSize="12.0" Position="962.954117,1329.690837" Width="72.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>.right_only()</String>
+            <ConnectedNoteIDs>98, 104</ConnectedNoteIDs>
+            <PointsToNoteIDs>98</PointsToNoteIDs>
+        </Note>
+        <Note ID="93" FontSize="12.0" Position="810.714687,1378.135231" Width="92.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>.common_dirs()</String>
+            <ConnectedNoteIDs>98, 104</ConnectedNoteIDs>
+            <PointsToNoteIDs>98</PointsToNoteIDs>
+        </Note>
+        <Note ID="94" FontSize="12.0" Position="933.356691,1377.887988" Width="94.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.753298 0.833036</Fill>
+            </Appearance>
+            <String>.common_files()</String>
+            <ConnectedNoteIDs>98, 104</ConnectedNoteIDs>
+            <PointsToNoteIDs>98</PointsToNoteIDs>
+        </Note>
+        <Note ID="98" FontSize="12.0" Position="904.484908,1442.593411" Width="29.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.120224 0.029981</Fill>
+            </Appearance>
+            <String>???</String>
+            <ConnectedNoteIDs>86, 91-94, 99</ConnectedNoteIDs>
+            <PointsToNoteIDs>99</PointsToNoteIDs>
+        </Note>
+        <Note ID="99" FontSize="12.0" Position="886.806599,1506.135231" Width="60.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>filediff . . .</String>
+            <ConnectedNoteIDs>86, 98</ConnectedNoteIDs>
+        </Note>
+        <Note ID="100" FontSize="12.0" Position="863.888213,1597.342686" Width="58.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>. . . dirdiff</String>
+            <ConnectedNoteIDs>70, 81-82</ConnectedNoteIDs>
+            <PointsToNoteIDs>81-82</PointsToNoteIDs>
+        </Note>
+        <Note ID="101" FontSize="12.0" Position="698.308408,1229.767795" Width="143.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>_config_A_source_path()</String>
+            <ConnectedNoteIDs>86, 89</ConnectedNoteIDs>
+            <PointsToNoteIDs>89</PointsToNoteIDs>
+        </Note>
+        <Note ID="102" FontSize="12.0" Position="681.160218,1284.135231" Width="143.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>_config_B_source_path()</String>
+            <ConnectedNoteIDs>86, 89</ConnectedNoteIDs>
+            <PointsToNoteIDs>89</PointsToNoteIDs>
+        </Note>
+        <Note ID="104" FontSize="12.0" Position="896.93022,1320.228062" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Cloud"></Border>
+                <Fill>0.940019 0.400834 0.686983</Fill>
+            </Appearance>
+            <String>dircmp</String>
+            <ConnectedNoteIDs>89, 91-94</ConnectedNoteIDs>
+        </Note>
+        <Note ID="106" FontSize="14.0" Position="122.583904,1124.693941" Width="65.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Cloud"></Border>
+                <Fill>0.439803 0.508417 0.940019</Fill>
+            </Appearance>
+            <String>word_file</String>
+            <ConnectedNoteIDs>111-112, 120</ConnectedNoteIDs>
+            <PointsToNoteIDs>112</PointsToNoteIDs>
+        </Note>
+        <Note ID="108" FontSize="14.0" Position="51.049283,1236.523368" Width="58.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Cloud"></Border>
+                <Fill>0.439803 0.508417 0.940019</Fill>
+            </Appearance>
+            <String>ugly_dir</String>
+            <ConnectedNoteIDs>111-113</ConnectedNoteIDs>
+            <PointsToNoteIDs>113</PointsToNoteIDs>
+        </Note>
+        <Note ID="109" FontSize="14.0" Position="219.236132,1286.156181" Width="67.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Cloud"></Border>
+                <Fill>0.439803 0.508417 0.940019</Fill>
+            </Appearance>
+            <String>pretty_dir</String>
+            <ConnectedNoteIDs>111, 113, 123</ConnectedNoteIDs>
+            <PointsToNoteIDs>123</PointsToNoteIDs>
+        </Note>
+        <Note ID="111" FontSize="20.0" Position="195.277148,1201.122327" Width="97.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="4" Style="Cloud"></Border>
+                <Fill>0.439803 0.508417 0.940019</Fill>
+            </Appearance>
+            <String>Specimen</String>
+            <ConnectedNoteIDs>106, 108-109, 135</ConnectedNoteIDs>
+        </Note>
+        <Note ID="112" FontSize="12.0" Position="43.717903,1178.453707" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>extract</String>
+            <ConnectedNoteIDs>106, 108</ConnectedNoteIDs>
+            <PointsToNoteIDs>108</PointsToNoteIDs>
+        </Note>
+        <Note ID="113" FontSize="12.0" Position="107.049283,1287.601493" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>prettify</String>
+            <ConnectedNoteIDs>108-109</ConnectedNoteIDs>
+            <PointsToNoteIDs>109</PointsToNoteIDs>
+        </Note>
+        <Note ID="114" FontSize="14.0" Position="404.361943,1138.911621" Width="65.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Cloud"></Border>
+                <Fill>0.375253 0.433797 0.802053</Fill>
+            </Appearance>
+            <String>word_file</String>
+            <ConnectedNoteIDs>117-118, 122</ConnectedNoteIDs>
+            <PointsToNoteIDs>118</PointsToNoteIDs>
+        </Note>
+        <Note ID="115" FontSize="14.0" Position="511.442967,1224.883858" Width="58.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Cloud"></Border>
+                <Fill>0.375253 0.433797 0.802053</Fill>
+            </Appearance>
+            <String>ugly_dir</String>
+            <ConnectedNoteIDs>117-119</ConnectedNoteIDs>
+            <PointsToNoteIDs>119</PointsToNoteIDs>
+        </Note>
+        <Note ID="116" FontSize="14.0" Position="339.482877,1286.693941" Width="67.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Cloud"></Border>
+                <Fill>0.375253 0.433797 0.802053</Fill>
+            </Appearance>
+            <String>pretty_dir</String>
+            <ConnectedNoteIDs>117, 119, 123</ConnectedNoteIDs>
+            <PointsToNoteIDs>123</PointsToNoteIDs>
+        </Note>
+        <Note ID="117" FontSize="20.0" Position="332.733528,1198.483004" Width="97.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="4" Style="Cloud"></Border>
+                <Fill>0.375253 0.433797 0.802053</Fill>
+            </Appearance>
+            <String>Specimen</String>
+            <ConnectedNoteIDs>114-116, 135</ConnectedNoteIDs>
+        </Note>
+        <Note ID="118" FontSize="12.0" Position="505.655207,1169.799223" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>extract</String>
+            <ConnectedNoteIDs>114-115</ConnectedNoteIDs>
+            <PointsToNoteIDs>115</PointsToNoteIDs>
+        </Note>
+        <Note ID="119" FontSize="12.0" Position="486.997003,1296.144926" Width="45.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>prettify</String>
+            <ConnectedNoteIDs>115-116</ConnectedNoteIDs>
+            <PointsToNoteIDs>116</PointsToNoteIDs>
+        </Note>
+        <Note ID="120" FontSize="18.0" Position="155.517123,1015.976047" Width="62.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="5" Style="Square"></Border>
+                <Fill>0.43017 0.940019 0.56512</Fill>
+            </Appearance>
+            <String>a.docx</String>
+            <ConnectedNoteIDs>106, 134</ConnectedNoteIDs>
+            <PointsToNoteIDs>106, 134</PointsToNoteIDs>
+        </Note>
+        <Note ID="122" FontSize="18.0" Position="378.657748,1018.182811" Width="62.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="5" Style="Square"></Border>
+                <Fill>0.341353 0.738199 0.450535</Fill>
+            </Appearance>
+            <String>b.docx</String>
+            <ConnectedNoteIDs>114, 134</ConnectedNoteIDs>
+            <PointsToNoteIDs>114</PointsToNoteIDs>
+        </Note>
+        <Note ID="123" FontSize="12.0" Position="279.088051,1352.67441" Width="38.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>dirdiff</String>
+            <ConnectedNoteIDs>109, 116, 124-127</ConnectedNoteIDs>
+            <PointsToNoteIDs>124-127</PointsToNoteIDs>
+        </Note>
+        <Note ID="124" FontSize="12.0" Position="168.088051,1430.67441" Width="40.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>filediff</String>
+            <ConnectedNoteIDs>123, 128</ConnectedNoteIDs>
+            <PointsToNoteIDs>128</PointsToNoteIDs>
+        </Note>
+        <Note ID="125" FontSize="12.0" Position="242.088051,1440.67441" Width="40.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>filediff</String>
+            <ConnectedNoteIDs>123, 129</ConnectedNoteIDs>
+            <PointsToNoteIDs>129</PointsToNoteIDs>
+        </Note>
+        <Note ID="126" FontSize="12.0" Position="315.088051,1444.67441" Width="40.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>filediff</String>
+            <ConnectedNoteIDs>123, 130</ConnectedNoteIDs>
+            <PointsToNoteIDs>130</PointsToNoteIDs>
+        </Note>
+        <Note ID="127" FontSize="12.0" Position="390.088051,1423.67441" Width="40.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.940019 0.652141 0.178249</Fill>
+            </Appearance>
+            <String>filediff</String>
+            <ConnectedNoteIDs>123, 131</ConnectedNoteIDs>
+            <PointsToNoteIDs>131</PointsToNoteIDs>
+        </Note>
+        <Note ID="128" FontSize="12.0" Position="168.088051,1499.67441" Width="40.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.564562 0.772971 0.445027</Fill>
+            </Appearance>
+            <String>diff.txt</String>
+            <ConnectedNoteIDs>124, 132</ConnectedNoteIDs>
+            <PointsToNoteIDs>132</PointsToNoteIDs>
+        </Note>
+        <Note ID="129" FontSize="12.0" Position="243.088051,1510.67441" Width="40.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.564562 0.772971 0.445027</Fill>
+            </Appearance>
+            <String>diff.txt</String>
+            <ConnectedNoteIDs>125, 132</ConnectedNoteIDs>
+            <PointsToNoteIDs>132</PointsToNoteIDs>
+        </Note>
+        <Note ID="130" FontSize="12.0" Position="317.088051,1514.67441" Width="40.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.564562 0.772971 0.445027</Fill>
+            </Appearance>
+            <String>diff.txt</String>
+            <ConnectedNoteIDs>126, 132</ConnectedNoteIDs>
+            <PointsToNoteIDs>132</PointsToNoteIDs>
+        </Note>
+        <Note ID="131" FontSize="12.0" Position="390.088051,1488.67441" Width="40.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+                <Fill>0.564562 0.772971 0.445027</Fill>
+            </Appearance>
+            <String>diff.txt</String>
+            <ConnectedNoteIDs>127, 132</ConnectedNoteIDs>
+            <PointsToNoteIDs>132</PointsToNoteIDs>
+        </Note>
+        <Note ID="132" FontSize="12.0" Position="281.088051,1588.67441" Width="43.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.927721 0.940019 0.464936</Fill>
+            </Appearance>
+            <String>format</String>
+            <ConnectedNoteIDs>128-131, 133</ConnectedNoteIDs>
+            <PointsToNoteIDs>133</PointsToNoteIDs>
+        </Note>
+        <Note ID="133" FontSize="26.0" Position="270.088051,1668.67441" Width="74.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="5" Style="Square"></Border>
+                <Fill>0.940019 0.212258 0.346476</Fill>
+            </Appearance>
+            <String>ab.rst</String>
+            <ConnectedNoteIDs>132</ConnectedNoteIDs>
+        </Note>
+        <Note ID="134" FontSize="12.0" Position="288.663313,994.492529" Width="28.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="2" Style="Jagged"></Border>
+                <Fill>0.927721 0.940019 0.464936</Fill>
+            </Appearance>
+            <String>edit</String>
+            <ConnectedNoteIDs>120, 122</ConnectedNoteIDs>
+            <PointsToNoteIDs>122</PointsToNoteIDs>
+        </Note>
+        <Note ID="135" FontSize="29.0" Position="230.109375,1078.114746" Width="155.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="4" Style="Cloud"></Border>
+                <Fill>0.499301 0.630813 0.940019</Fill>
+            </Appearance>
+            <String>Experiment</String>
+            <ConnectedNoteIDs>111, 117</ConnectedNoteIDs>
+        </Note>
+    </Notes>
+    <BackgroundShapes>
+        <Shape ID="141" Sticky="No" Position="31.725286,41.264631" Width="395.0" Height="898.333333">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+        </Shape>
+        <Shape ID="136" Sticky="No" Position="633.465666,55.317442" Width="343.0" Height="438.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+        </Shape>
+        <Shape ID="137" Sticky="No" Position="630.126704,528.952271" Width="398.0" Height="615.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+        </Shape>
+        <Shape ID="139" Sticky="No" Position="647.174671,1575.138259" Width="367.333333" Height="500.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+        </Shape>
+        <Shape ID="140" Sticky="No" Position="627.394221,1181.135231" Width="429.333333" Height="371.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+        </Shape>
+        <Shape ID="142" Sticky="No" Position="20.514483,971.360608" Width="573.666667" Height="758.333333">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+        </Shape>
+    </BackgroundShapes>
+    <AutoFit>0-2, 20-25, 27-55, 58-59, 61-63, 65-73, 75-77, 79-83, 86-89, 91-94, 98-102, 104, 106, 108-109, 111-120, 122-137</AutoFit>
+    <NoteStyles>
+        <Style Name="Blue Bubble" ID="CE105272-A6E7-4E3B-9DB7-B008BD2045B2" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.477193 0.557066 0.76433</BorderColor>
+            <FillColor>0.840969 0.866828 0.925903</FillColor>
+        </Style>
+        <Style Name="Brown Bubble" ID="8E54F82A-A49B-498F-8FC9-9A5F409A924F" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.290055 0.1523 0.182215</BorderColor>
+            <FillColor>0.940019 0.892907 0.779716</FillColor>
+        </Style>
+        <Style Name="builtin" ID="D7761998-4969-4CE4-9C93-1938B4B28441" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectSticky="Yes">
+            <FontSize>12.0</FontSize>
+            <Alignment>Left</Alignment>
+            <BorderThickness>1</BorderThickness>
+            <BorderStyle>Jagged</BorderStyle>
+            <FillColor>0.877938 0.823152 0.940019</FillColor>
+            <Size>67.0,150.0</Size>
+        </Style>
+        <Style Name="file" ID="6A03C5F7-CD66-4192-8F59-7EE30C8D9413" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectSticky="Yes">
+            <FontSize>12.0</FontSize>
+            <Alignment>Left</Alignment>
+            <BorderThickness>1</BorderThickness>
+            <BorderStyle>Square</BorderStyle>
+            <FillColor>0.576032 0.940019 0.916016</FillColor>
+            <Size>118.0,150.0</Size>
+        </Style>
+        <Style Name="Green Bubble" ID="6E3D94D8-850E-46C9-9248-C45BF7DD41C6" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.331867 0.609932 0.356197</BorderColor>
+            <FillColor>0.790123 0.882328 0.80198</FillColor>
+        </Style>
+        <Style Name="intermediatedata" ID="054BF1F1-CC47-4A59-A3A2-4B84348CC176" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectSticky="Yes">
+            <FontSize>12.0</FontSize>
+            <Alignment>Left</Alignment>
+            <BorderThickness>1</BorderThickness>
+            <BorderStyle>Cloud</BorderStyle>
+            <FillColor>0.696005 0.799241 0.940019</FillColor>
+            <Size>51.0,150.0</Size>
+        </Style>
+        <Style Name="lib" ID="D66BBE64-F080-42C2-9F92-877DA976013A" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectSticky="Yes">
+            <FontSize>12.0</FontSize>
+            <Alignment>Left</Alignment>
+            <BorderThickness>1</BorderThickness>
+            <BorderStyle>Jagged</BorderStyle>
+            <FillColor>0.940019 0.753298 0.833036</FillColor>
+            <Size>165.0,150.0</Size>
+        </Style>
+        <Style Name="libclass" ID="E2EB9EE7-0BCB-4BCE-804C-034DCED723BF" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectSticky="Yes">
+            <FontSize>12.0</FontSize>
+            <Alignment>Left</Alignment>
+            <BorderThickness>1</BorderThickness>
+            <BorderStyle>Cloud</BorderStyle>
+            <FillColor>0.940019 0.400834 0.686983</FillColor>
+            <Size>83.0,150.0</Size>
+        </Style>
+        <Style Name="libmethod" ID="37D79820-E419-4D11-BD49-68715A6932E2" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectSticky="Yes">
+            <FontSize>12.0</FontSize>
+            <Alignment>Left</Alignment>
+            <BorderThickness>1</BorderThickness>
+            <BorderStyle>Jagged</BorderStyle>
+            <FillColor>0.940019 0.753298 0.833036</FillColor>
+            <Size>165.0,150.0</Size>
+        </Style>
+        <Style Name="manualaction" ID="9D54D7B7-9C7E-43D1-905A-42C8FC3A75AB" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectSticky="Yes">
+            <FontSize>12.0</FontSize>
+            <Alignment>Left</Alignment>
+            <BorderThickness>2</BorderThickness>
+            <BorderStyle>Jagged</BorderStyle>
+            <FillColor>0.927721 0.940019 0.464936</FillColor>
+            <Size>28.0,150.0</Size>
+        </Style>
+        <Style Name="method" ID="0B784179-AC7A-46B9-A08D-CD1B6052E340" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectSticky="Yes">
+            <FontSize>12.0</FontSize>
+            <Alignment>Left</Alignment>
+            <BorderThickness>1</BorderThickness>
+            <BorderStyle>Jagged</BorderStyle>
+            <FillColor>0.940019 0.892907 0.779716</FillColor>
+            <Size>68.0,150.0</Size>
+        </Style>
+        <Style Name="minordir" ID="9CF952B3-3A4E-4B97-9AB3-68D6894E7C44" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="Yes" AffectNoteBody="Yes" AffectSize="No" AffectFade="No" AffectSticky="Yes">
+            <FontSize>12.0</FontSize>
+            <Alignment>Left</Alignment>
+            <BorderThickness>1</BorderThickness>
+            <BorderStyle>Square</BorderStyle>
+            <FillColor>0.685753 0.940019 0.536445</FillColor>
+            <Size>34.0,150.0</Size>
+        </Style>
+        <Style Name="Pink Bubble" ID="84BED1B1-3E34-4019-924E-4CAC91CE6E81" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.747881 0.366532 0.542813</BorderColor>
+            <FillColor>0.918452 0.807302 0.863467</FillColor>
+        </Style>
+        <Style Name="Red Text" ID="9285BF68-6576-4E38-8040-2DC6E02AEFB9" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="Yes" AffectNoteBody="No" AffectFade="No">
+            <TextColor>1.0 0.0 0.0</TextColor>
+        </Style>
+        <Style Name="Title Text" ID="89735FC8-C52C-4534-A88B-0D953C25ADF0" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="No" AffectNoteBody="No" AffectFade="No">
+            <FontSize>28.0</FontSize>
+            <IsBold>Yes</IsBold>
+        </Style>
+        <Style Name="Yellow Bubble" ID="E0C9D593-4BEF-4276-A96C-D7874676E2DE" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.756763 0.785592 0.373258</BorderColor>
+            <FillColor>0.906773 0.910625 0.634363</FillColor>
+        </Style>
+    </NoteStyles>
+    <UISettings>
+        <BackgroundColor>0.524358 0.519512 0.490783</BackgroundColor>
+        <DefaultFont>Helvetica</DefaultFont>
+        <DefaultTextColor>0.0 0.0 0.0</DefaultTextColor>
+    </UISettings>
+    <PrintSettings PaperSize="611.999985,792.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="na-letter" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
+</ScappleDocument>
