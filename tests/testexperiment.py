@@ -33,22 +33,35 @@ class ExperimentPathTest(unittest.TestCase):
         extract_dest_path_result = self.exp.b_ugly_dir_path
         self.assertEqual(extract_dest_path_target, extract_dest_path_result)
         
-    def test_config_prettify_ugly_paths(self):
+    def test_config_prettify_ugly_pathsA(self):
         ugly_paths_target = [
-            '[Content_Types].xml',
-            '_rels/.rels',
-            'word/_rels/document.xml.rels',
-            'docProps/app.xml',
-            'docProps/core.xml',
-            'word/document.xml',
-            'word/fontTable.xml',
-            'word/settings.xml',
-            'word/styles.xml',
-            'word/stylesWithEffects.xml',
-            'word/webSettings.xml',
-            'word/_rels/document.xml.rels',
-            'word/theme/theme1.xml',
+            'exp/0-blank_1-para/a/ugly/[Content_Types].xml',
+            'exp/0-blank_1-para/a/ugly/_rels/.rels',
+            'exp/0-blank_1-para/a/ugly/docProps/app.xml',
+            'exp/0-blank_1-para/a/ugly/docProps/core.xml',
+            'exp/0-blank_1-para/a/ugly/word/_rels/document.xml.rels',
+            'exp/0-blank_1-para/a/ugly/word/document.xml',
+            'exp/0-blank_1-para/a/ugly/word/fontTable.xml',
+            'exp/0-blank_1-para/a/ugly/word/settings.xml',
+            'exp/0-blank_1-para/a/ugly/word/styles.xml',
+            'exp/0-blank_1-para/a/ugly/word/theme/theme1.xml',
+            'exp/0-blank_1-para/a/ugly/word/webSettings.xml',
             ]    
+
+    def test_config_pretty_dir_structureA(self):
+        dir_structure_target = [
+            'exp/0-blank_1-para/a/pretty/_rels',
+            'exp/0-blank_1-para/a/pretty/docProps',
+            'exp/0-blank_1-para/a/pretty/word',
+            'exp/0-blank_1-para/a/pretty/word/_rels',
+            'exp/0-blank_1-para/a/pretty/word/theme',
+            ]
+
+    def test_config_prettify_passthrough_pathsA(self):
+        passthrough_paths_target = [
+            'exp/0-blank_1-para/a/ugly/docProps/thumbnail.jpeg',
+            ]    
+
     def test_config_prettify_pretty_paths(self):
         pass
     
@@ -84,3 +97,7 @@ def test():
 
 if __name__ == '__main__':
     test()
+
+
+
+
