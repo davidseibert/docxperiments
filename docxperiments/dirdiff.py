@@ -32,48 +32,37 @@ def walk_dir(root):
     return [os.path.relpath(node, head) for node in sorted(flattened) if os.path.basename(node) not in ignored ]
 
 def get_left_only(a_path, b_path):
-    return []
-def get_right_only(a_path, b_path):
-    return []
-def get_common(a_path, b_path):
-    return []
-
-
-def main():
-    a_path = '../tests/testdata/diffsampleA'
-    b_path = '../tests/testdata/diffsampleB'
     a_nodes = walk_dir(a_path)
-    a_list_str = '\n'.join(a_nodes)
-    print a_list_str
     b_nodes = walk_dir(b_path)
-    b_list_str = '\n'.join(b_nodes)
-    print b_list_str
-
-    print '\n A\n---'
     a_std = [
         '/'.join(
             node.split('/')[1:]
             ) for node in a_nodes ]
-    print '\n'.join(a_std)
-
-    print '\n B\n---'
     b_std = [
         '/'.join(
             node.split('/')[1:]
             ) for node in b_nodes ]
-    print '\n'.join(b_std)
-
-    print '\n A - B\n-------'
     a_minus_b = [ node for node in a_std if node not in b_std ]
-    print '\n'.join(a_minus_b)
-
-    print '\n B - A\n-------'
+    return a_minus_b
+ 
+def get_right_only(a_path, b_path):
+    a_nodes = walk_dir(a_path)
+    b_nodes = walk_dir(b_path)
+    a_std = ['/'.join(node.split('/')[1:]) for node in a_nodes ]
+    b_std = ['/'.join(node.split('/')[1:]) for node in b_nodes ]
     b_minus_a = [ node for node in b_std if node not in a_std ]
-    print '\n'.join(b_minus_a)
+    return b_minus_a
+    
+def get_common(a_path, b_path):
+    a_nodes = walk_dir(a_path)
+    b_nodes = walk_dir(b_path)
+    a_std = ['/'.join(node.split('/')[1:]) for node in a_nodes ]
+    b_std = ['/'.join(node.split('/')[1:]) for node in b_nodes ]
+    b_and_a = [ node for node in b_std if node in a_std ]
+    return b_and_a
 
-    print '\n A x B\n-------'
-    b_minus_a = [ node for node in b_std if node in a_std ]
-    print '\n'.join(b_minus_a)
+def main():
+    pass
 
 if __name__ == '__main__':
     main()
