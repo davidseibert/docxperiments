@@ -11,35 +11,35 @@ class DirDiffTest(unittest.TestCase):
 
     def test_dir_walk_A(self):
         dir_listing_A_target = [
-            'diffsampleA/file1.txt',
-            'diffsampleA/file2.txt',
-            'diffsampleA/subdir1',
-            'diffsampleA/subdir1/file3.txt',
-            'diffsampleA/subdir1/file4.txt',
-            'diffsampleA/subdir2',
-            'diffsampleA/subdir2/.file5.txt',
-            'diffsampleA/subdir2/file6.txt',
-            'diffsampleA/subdir2/file7.txt',
-            'diffsampleA/subdir2/subdir3',
-            'diffsampleA/subdir2/subdir3/file8.txt',
+            'testdata/diffsampleA/file1.txt',
+            'testdata/diffsampleA/file2.txt',
+            'testdata/diffsampleA/subdir1',
+            'testdata/diffsampleA/subdir1/file3.txt',
+            'testdata/diffsampleA/subdir1/file4.txt',
+            'testdata/diffsampleA/subdir2',
+            'testdata/diffsampleA/subdir2/.file5.txt',
+            'testdata/diffsampleA/subdir2/file6.txt',
+            'testdata/diffsampleA/subdir2/file7.txt',
+            'testdata/diffsampleA/subdir2/subdir3',
+            'testdata/diffsampleA/subdir2/subdir3/file8.txt',
             ]
         dir_listing_A_result = dirdiff.walk_dir(self.a_path)
         self.assertEqual(dir_listing_A_target, dir_listing_A_result)
 
     def test_dir_walk_B(self):
         dir_listing_B_target = [
-            'diffsampleB/file1.txt',
-            'diffsampleB/file2.txt',
-            'diffsampleB/subdir1',
-            'diffsampleB/subdir1/file3.txt',
-            'diffsampleB/subdir1/file4.txt',
-            'diffsampleB/subdir2',
-            'diffsampleB/subdir2/.file6.txt',
-            'diffsampleB/subdir2/subdir3',
-            'diffsampleB/subdir2/subdir3/file7.txt',
-            'diffsampleB/subdir2/subdir3/file9.txt',
-            'diffsampleB/subdir4',
-            'diffsampleB/subdir4/file5.txt',
+            'testdata/diffsampleB/file1.txt',
+            'testdata/diffsampleB/file2.txt',
+            'testdata/diffsampleB/subdir1',
+            'testdata/diffsampleB/subdir1/file3.txt',
+            'testdata/diffsampleB/subdir1/file4.txt',
+            'testdata/diffsampleB/subdir2',
+            'testdata/diffsampleB/subdir2/.file6.txt',
+            'testdata/diffsampleB/subdir2/subdir3',
+            'testdata/diffsampleB/subdir2/subdir3/file7.txt',
+            'testdata/diffsampleB/subdir2/subdir3/file9.txt',
+            'testdata/diffsampleB/subdir4',
+            'testdata/diffsampleB/subdir4/file5.txt',
             ]
         dir_listing_B_result = dirdiff.walk_dir(
                 'testdata/diffsampleB'

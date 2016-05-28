@@ -4,9 +4,7 @@ import os, filecmp
 
 def _process_level(root, level, no):
     subnodes = []
-    root_name = os.path.basename(root)
     dirpath, dirnames, filenames = level
-    subroot = os.path.basename(dirpath)
     for dirname in dirnames:
         subnodes.append(os.path.join(dirpath, dirname))
     for filename in filenames:
@@ -29,37 +27,36 @@ def walk_dir(root):
 
     flattened = [subnode for subnodelist in nodes for subnode in subnodelist]
 
-    return [os.path.relpath(node, head) for node in sorted(flattened) if os.path.basename(node) not in ignored ]
+    return [node for node in sorted(flattened) if os.path.basename(node) not in ignored ]
 
 def get_left_only(a_path, b_path):
     a_nodes = walk_dir(a_path)
     b_nodes = walk_dir(b_path)
-    a_std = [
-        '/'.join(
-            node.split('/')[1:]
-            ) for node in a_nodes ]
-    b_std = [
-        '/'.join(
-            node.split('/')[1:]
-            ) for node in b_nodes ]
+    a_std = _standardize(a_nodes, a_path)
+    b_std = _standardize(b_nodes, b_path)
     a_minus_b = [ node for node in a_std if node not in b_std ]
     return a_minus_b
  
 def get_right_only(a_path, b_path):
     a_nodes = walk_dir(a_path)
     b_nodes = walk_dir(b_path)
-    a_std = ['/'.join(node.split('/')[1:]) for node in a_nodes ]
-    b_std = ['/'.join(node.split('/')[1:]) for node in b_nodes ]
+    a_std = _standardize(a_nodes, a_path)
+    b_std = _standardize(b_nodes, b_path)
     b_minus_a = [ node for node in b_std if node not in a_std ]
     return b_minus_a
     
 def get_common(a_path, b_path):
     a_nodes = walk_dir(a_path)
     b_nodes = walk_dir(b_path)
-    a_std = ['/'.join(node.split('/')[1:]) for node in a_nodes ]
-    b_std = ['/'.join(node.split('/')[1:]) for node in b_nodes ]
+    a_std = _standardize(a_nodes, a_path)
+    b_std = _standardize(b_nodes, b_path)
     b_and_a = [ node for node in b_std if node in a_std ]
     return b_and_a
+
+def _standardize(nodes, parent):
+    std = [ os.path.relpath(node, parent) for node in nodes ]
+    return std
+
 
 def main():
     pass
