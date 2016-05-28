@@ -1,0 +1,19 @@
+<slideshow 
+    title="Sample Slide Show"
+    date="Date of publication"
+    author="Self-important tool"
+    >
+
+    <slide type="all">
+      <title>Wake up to WonderWidgets!</title>
+    </slide>
+
+    <slide type="all">
+        <title>Uberview</title>
+        <item>Why does the world exist?</item>
+        <item>Pourqoui <em>WonderWidgets</em> are great</item>
+        <item/>
+        <item>Quien <em>buys</em> WonderWidgets</item>
+    </slide>
+
+</slideshow>

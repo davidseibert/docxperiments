@@ -1,0 +1,29 @@
+--- 
++++ 
+@@ -1,20 +1,19 @@
+ <slideshow 
+     title="Sample Slide Show"
+     date="Date of publication"
+-    author="Yours Truly"
++    author="Self-important tool"
+     >
+ 
+-    <!-- TITLE SLIDE -->
+     <slide type="all">
+       <title>Wake up to WonderWidgets!</title>
+     </slide>
+ 
+-    <!-- OVERVIEW -->
+     <slide type="all">
+-        <title>Overview</title>
+-        <item>Why <em>WonderWidgets</em> are great</item>
++        <title>Uberview</title>
++        <item>Why does the world exist?</item>
++        <item>Pourqoui <em>WonderWidgets</em> are great</item>
+         <item/>
+-        <item>Who <em>buys</em> WonderWidgets</item>
++        <item>Quien <em>buys</em> WonderWidgets</item>
+     </slide>
+ 
+ </slideshow>
+
