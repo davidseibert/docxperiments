@@ -1,0 +1,44 @@
+--- 
++++ 
+@@ -4,16 +4,16 @@
+   Normal.dotm
+  </Template>
+  <TotalTime>
+-  1
++  0
+  </TotalTime>
+  <Pages>
+   1
+  </Pages>
+  <Words>
+-  0
++  29
+  </Words>
+  <Characters>
+-  0
++  166
+  </Characters>
+  <Application>
+   Microsoft Macintosh Word
+@@ -22,10 +22,10 @@
+   0
+  </DocSecurity>
+  <Lines>
+-  0
++  1
+  </Lines>
+  <Paragraphs>
+-  0
++  1
+  </Paragraphs>
+  <ScaleCrop>
+   false
+@@ -34,7 +34,7 @@
+   false
+  </LinksUpToDate>
+  <CharactersWithSpaces>
+-  0
++  194
+  </CharactersWithSpaces>
+  <SharedDoc>
+   false

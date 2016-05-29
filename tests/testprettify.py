@@ -7,7 +7,7 @@ class PrettifyTest(unittest.TestCase):
 
     def test_prettify_makes_xml_pretty(self):
         xml_file_path = 'testdata/ugly.xml'
-        pretty_xml_str = prettify.prettify(xml_file_path)
+        pretty_xml_str = prettify.prettify_xml(xml_file_path)
         with open('testdata/pretty.xml') as f:
             txt = f.read().decode('utf-8')
         self.assertEqual(pretty_xml_str, txt[:-1])
