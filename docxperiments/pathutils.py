@@ -36,14 +36,19 @@ def experiments_rel(path):
 
 
 
-def ls(root):
+def ls(root, depth=None):
     ignored = {'.DS_Store'}
-    def _process_level(level):
+
+    levels = os.walk(root)
+
+    nodes = []
+    for n, level in enumerate(levels):
+        if depth is not None and n > depth:
+            break
         dirpath, dirnames, filenames = level
         dirnodes = [ mkpath(dirpath, dirname) for dirname in dirnames ]
         filenodes = [ mkpath(dirpath, filename) for filename in filenames if filename not in ignored]
-        return dirnodes + filenodes
-    levels = os.walk(root)
-    nodes = [ _process_level(level) for level in levels ]
+        nodes.append(dirnodes + filenodes)
+
     flattened = [subnode for subnodelist in nodes for subnode in subnodelist]
     return sorted(flattened)
