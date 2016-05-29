@@ -1,33 +1,11 @@
 # coding: utf-8
 
 import os, filecmp
+from pathutils import ls
 
-def _process_level(root, level, no):
-    subnodes = []
-    dirpath, dirnames, filenames = level
-    for dirname in dirnames:
-        subnodes.append(os.path.join(dirpath, dirname))
-    for filename in filenames:
-        subnodes.append(os.path.join(dirpath, filename))
-    return subnodes
-
+# This needs to be deleted, but my test depends on it...
 def walk_dir(root):
-    ignored = set()
-    ignored.add('.DS_Store')
-
-    head, tail = os.path.split(root)
-    levels = os.walk(root)
-
-    nodes = []
-    i = 0
-    for no, level in enumerate(levels):
-        subnodes = _process_level(root, level, no)
-        nodes.append(subnodes)
-        i += 1
-
-    flattened = [subnode for subnodelist in nodes for subnode in subnodelist]
-
-    return [node for node in sorted(flattened) if os.path.basename(node) not in ignored ]
+    return ls(root)
 
 def get_left_only(a_path, b_path):
     a_nodes = walk_dir(a_path)
