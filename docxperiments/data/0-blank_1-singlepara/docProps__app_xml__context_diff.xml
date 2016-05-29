@@ -1,0 +1,77 @@
+*** 
+--- 
+***************
+*** 4,19 ****
+    Normal.dotm
+   </Template>
+   <TotalTime>
+!   1
+   </TotalTime>
+   <Pages>
+    1
+   </Pages>
+   <Words>
+!   0
+   </Words>
+   <Characters>
+!   0
+   </Characters>
+   <Application>
+    Microsoft Macintosh Word
+--- 4,19 ----
+    Normal.dotm
+   </Template>
+   <TotalTime>
+!   0
+   </TotalTime>
+   <Pages>
+    1
+   </Pages>
+   <Words>
+!   29
+   </Words>
+   <Characters>
+!   166
+   </Characters>
+   <Application>
+    Microsoft Macintosh Word
+***************
+*** 22,31 ****
+    0
+   </DocSecurity>
+   <Lines>
+!   0
+   </Lines>
+   <Paragraphs>
+!   0
+   </Paragraphs>
+   <ScaleCrop>
+    false
+--- 22,31 ----
+    0
+   </DocSecurity>
+   <Lines>
+!   1
+   </Lines>
+   <Paragraphs>
+!   1
+   </Paragraphs>
+   <ScaleCrop>
+    false
+***************
+*** 34,40 ****
+    false
+   </LinksUpToDate>
+   <CharactersWithSpaces>
+!   0
+   </CharactersWithSpaces>
+   <SharedDoc>
+    false
+--- 34,40 ----
+    false
+   </LinksUpToDate>
+   <CharactersWithSpaces>
+!   194
+   </CharactersWithSpaces>
+   <SharedDoc>
+    false

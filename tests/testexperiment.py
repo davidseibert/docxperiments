@@ -1,8 +1,9 @@
 # coding: utf-8
 
 import context, testutils, unittest
-from docxperiments import experiment, PROJECT_DIR, PACKAGE_DIR, DATA_DIR
+from docxperiments import experiment, PROJECT_DIR, PACKAGE_DIR, DATA_DIR, dirdiff
 import os
+import shutil
 
 def project_relative(path):
     return os.path.relpath(path, PROJECT_DIR)
@@ -16,26 +17,33 @@ def data_relative(path):
     else:
         return [os.path.relpath(i, DATA_DIR) for i in path]
 
+def relative(path, other):
+    if isinstance(path, basestring):
+        return os.path.relpath(path, other)
+    else:
+        return [os.path.relpath(i, other) for i in path]
+
+
 class ExperimentPathTest(unittest.TestCase):
     maxDiff = None
     
     def setUp(self):
-        self.exp = experiment.Experiment('0-blank', '1-para')
-    
+        self.exp = experiment.Experiment('0-blank', '1-singlepara')
+
+    def test_config_exp_dir_path(self):
+        exp_dir_path_target = '0-blank_1-singlepara'
+        exp_dir_path_result = self.exp.exp_dir_path
+        self.assertEqual(exp_dir_path_target, data_relative(exp_dir_path_result))
+
     def test_config_docx_path_left(self):
         docx_path_target = '0-blank/0-blank.docx'
         docx_path_result = self.exp.docx_paths[0]
         self.assertEqual(docx_path_target, data_relative(docx_path_result))
 
     def test_config_docx_path_right(self):
-        docx_path_target = '1-para/1-para.docx'
+        docx_path_target = '1-singlepara/1-singlepara.docx'
         docx_path_result = self.exp.docx_paths[1]
         self.assertEqual(docx_path_target, data_relative(docx_path_result))
-
-    def test_config_exp_dir_path(self):
-        exp_dir_path_target = '0-blank_1-para'
-        exp_dir_path_result = self.exp.exp_dir_path
-        self.assertEqual(exp_dir_path_target, data_relative(exp_dir_path_result))
 
     def test_config_ugly_dir_path_left(self):
         extract_dest_path_target = '0-blank/ugly'
@@ -43,11 +51,21 @@ class ExperimentPathTest(unittest.TestCase):
         self.assertEqual(extract_dest_path_target, data_relative(extract_dest_path_result))
 
     def test_config_ugly_dir_path_right(self):
-        extract_dest_path_target = '1-para/ugly'
+        extract_dest_path_target = '1-singlepara/ugly'
         extract_dest_path_result = self.exp.ugly_dir_paths[1]
         self.assertEqual(extract_dest_path_target, data_relative(extract_dest_path_result))
 
-    def test_config_prettify_ugly_file_paths_left(self):
+    def test_config_pretty_dir_path_left(self):
+        extract_dest_path_target = '0-blank/pretty'
+        extract_dest_path_result = self.exp.pretty_dir_paths[0]
+        self.assertEqual(extract_dest_path_target, data_relative(extract_dest_path_result))
+
+    def test_config_pretty_dir_path_right(self):
+        extract_dest_path_target = '1-singlepara/pretty'
+        extract_dest_path_result = self.exp.pretty_dir_paths[1]
+        self.assertEqual(extract_dest_path_target, data_relative(extract_dest_path_result))
+
+    def test_config_ugly_file_paths_left(self):
         ugly_file_paths_target = [
             '0-blank/ugly/[Content_Types].xml',
             '0-blank/ugly/_rels',
@@ -68,89 +86,76 @@ class ExperimentPathTest(unittest.TestCase):
             '0-blank/ugly/word/webSettings.xml',
             ]
         ugly_file_paths_result = self.exp.ugly_file_paths[0]
-        #self.assertEqual(len(ugly_file_paths_result), 5)
         self.assertItemsEqual(ugly_file_paths_target, data_relative(ugly_file_paths_result))
 
-    @unittest.skip("Not Implemented")
-    def test_config_prettify_ugly_passthrough_pathsA(self):
-        passthrough_paths_target = [
-            'exp/0-blank_1-para/a/ugly/docProps/thumbnail.jpeg',
-            ]
-        raise self.failureException("not implemented")
+    def test_config_ugly_file_paths_right(self):
+        ugly_file_paths_target = [
+            '1-singlepara/ugly/[Content_Types].xml',
+            '1-singlepara/ugly/_rels',
+            '1-singlepara/ugly/_rels/.rels',
+            '1-singlepara/ugly/docProps',
+            '1-singlepara/ugly/docProps/app.xml',
+            '1-singlepara/ugly/docProps/core.xml',
+            '1-singlepara/ugly/docProps/thumbnail.jpeg',
+            '1-singlepara/ugly/word',
+            '1-singlepara/ugly/word/_rels',
+            '1-singlepara/ugly/word/_rels/document.xml.rels',
+            '1-singlepara/ugly/word/document.xml',
+            '1-singlepara/ugly/word/fontTable.xml',
+            '1-singlepara/ugly/word/settings.xml',
+            '1-singlepara/ugly/word/styles.xml',
+            '1-singlepara/ugly/word/theme',
+            '1-singlepara/ugly/word/theme/theme1.xml',
+            '1-singlepara/ugly/word/webSettings.xml',
+        ]
+        ugly_file_paths_result = self.exp.ugly_file_paths[1]
+        self.assertItemsEqual(ugly_file_paths_target, data_relative(ugly_file_paths_result))
 
-    @unittest.skip("Not Implemented")
-    def test_config_prettify_ugly_pathsB(self):
-        ugly_paths_target = [
-            'exp/0-blank_1-para/b/ugly/[Content_Types].xml',
-            'exp/0-blank_1-para/b/ugly/_rels/.rels',
-            'exp/0-blank_1-para/b/ugly/docProps/app.xml',
-            'exp/0-blank_1-para/b/ugly/docProps/core.xml',
-            'exp/0-blank_1-para/b/ugly/docProps/thumbnail.jpeg',
-            'exp/0-blank_1-para/b/ugly/word/_rels/document.xml.rels',
-            'exp/0-blank_1-para/b/ugly/word/document.xml',
-            'exp/0-blank_1-para/b/ugly/word/fontTable.xml',
-            'exp/0-blank_1-para/b/ugly/word/settings.xml',
-            'exp/0-blank_1-para/b/ugly/word/styles.xml',
-            'exp/0-blank_1-para/b/ugly/word/theme/theme1.xml',
-            'exp/0-blank_1-para/b/ugly/word/webSettings.xml',
-            ]
-        raise self.failureException("not implemented")
+    def test_config_pretty_file_paths_left(self):
+        pretty_file_paths_target = [
+            '0-blank/pretty/[Content_Types].xml',
+            '0-blank/pretty/_rels',
+            '0-blank/pretty/_rels/.rels',
+            '0-blank/pretty/docProps',
+            '0-blank/pretty/docProps/app.xml',
+            '0-blank/pretty/docProps/core.xml',
+            '0-blank/pretty/docProps/thumbnail.jpeg',
+            '0-blank/pretty/word',
+            '0-blank/pretty/word/_rels',
+            '0-blank/pretty/word/_rels/document.xml.rels',
+            '0-blank/pretty/word/document.xml',
+            '0-blank/pretty/word/fontTable.xml',
+            '0-blank/pretty/word/settings.xml',
+            '0-blank/pretty/word/styles.xml',
+            '0-blank/pretty/word/theme',
+            '0-blank/pretty/word/theme/theme1.xml',
+            '0-blank/pretty/word/webSettings.xml',
+        ]
+        pretty_file_paths_result = self.exp.pretty_file_paths[0]
+        self.assertItemsEqual(pretty_file_paths_target, data_relative(pretty_file_paths_result))
 
-    @unittest.skip("Not Implemented")
-    def test_config_prettify_ugly_passthrough_pathsB(self):
-        passthrough_paths_target = [
-            'exp/0-blank_1-para/b/ugly/docProps/thumbnail.jpeg',
-            ]
-        raise self.failureException("not implemented")
-
-    @unittest.skip("Not Implemented")
-    def test_config_prettify_pretty_pathsA(self):
-        pretty_paths_target = [
-            'exp/0-blank_1-para/a/pretty/[Content_Types].xml',
-            'exp/0-blank_1-para/a/pretty/_rels/.rels',
-            'exp/0-blank_1-para/a/pretty/docProps/app.xml',
-            'exp/0-blank_1-para/a/pretty/docProps/core.xml',
-            'exp/0-blank_1-para/a/pretty/docProps/thumbnail.jpeg',
-            'exp/0-blank_1-para/a/pretty/word/_rels/document.xml.rels',
-            'exp/0-blank_1-para/a/pretty/word/document.xml',
-            'exp/0-blank_1-para/a/pretty/word/fontTable.xml',
-            'exp/0-blank_1-para/a/pretty/word/settings.xml',
-            'exp/0-blank_1-para/a/pretty/word/styles.xml',
-            'exp/0-blank_1-para/a/pretty/word/theme/theme1.xml',
-            'exp/0-blank_1-para/a/pretty/word/webSettings.xml',
-            ]
-        raise self.failureException("not implemented")
-
-    @unittest.skip("Not Implemented")
-    def test_config_prettify_pretty_pathsB(self):
-        pretty_paths_target = [
-            'exp/0-blank_1-para/b/pretty/[Content_Types].xml',
-            'exp/0-blank_1-para/b/pretty/_rels/.rels',
-            'exp/0-blank_1-para/b/pretty/docProps/app.xml',
-            'exp/0-blank_1-para/b/pretty/docProps/core.xml',
-            'exp/0-blank_1-para/b/pretty/docProps/thumbnail.jpeg',
-            'exp/0-blank_1-para/b/pretty/word/_rels/document.xml.rels',
-            'exp/0-blank_1-para/b/pretty/word/document.xml',
-            'exp/0-blank_1-para/b/pretty/word/fontTable.xml',
-            'exp/0-blank_1-para/b/pretty/word/settings.xml',
-            'exp/0-blank_1-para/b/pretty/word/styles.xml',
-            'exp/0-blank_1-para/b/pretty/word/theme/theme1.xml',
-            'exp/0-blank_1-para/b/pretty/word/webSettings.xml',
-            ]
-        raise self.failureException("not implemented")
-
-    @unittest.skip("Not Implemented")
-    def test_config_analysis_dir_path(self):
-        analysis_dir_path_target = 'exp/0-blank_1-para/analysis'
-        raise self.failureException("not implemented")
-
-    @unittest.skip("Not Implemented")
-    def test_config_diff_report_dir_path(self):
-        raise self.failureException("not implemented")
-
-    @unittest.skip("Not Implemented")
-    def test_config_diff_report_file_path(self):
-        raise self.failureException("not implemented")
+    def test_config_pretty_file_paths_right(self):
+        pretty_file_paths_target = [
+            '1-singlepara/pretty/[Content_Types].xml',
+            '1-singlepara/pretty/_rels',
+            '1-singlepara/pretty/_rels/.rels',
+            '1-singlepara/pretty/docProps',
+            '1-singlepara/pretty/docProps/app.xml',
+            '1-singlepara/pretty/docProps/core.xml',
+            '1-singlepara/pretty/docProps/thumbnail.jpeg',
+            '1-singlepara/pretty/word',
+            '1-singlepara/pretty/word/_rels',
+            '1-singlepara/pretty/word/_rels/document.xml.rels',
+            '1-singlepara/pretty/word/document.xml',
+            '1-singlepara/pretty/word/fontTable.xml',
+            '1-singlepara/pretty/word/settings.xml',
+            '1-singlepara/pretty/word/styles.xml',
+            '1-singlepara/pretty/word/theme',
+            '1-singlepara/pretty/word/theme/theme1.xml',
+            '1-singlepara/pretty/word/webSettings.xml',
+        ]
+        pretty_file_paths_result = self.exp.pretty_file_paths[1]
+        self.assertItemsEqual(pretty_file_paths_target, data_relative(pretty_file_paths_result))
 
     def test_orient_to_project_dir(self):
         self.assertEqual(
@@ -171,22 +176,65 @@ class ExperimentPathTest(unittest.TestCase):
         )
 
 class ExperimentFileOperationsTest(unittest.TestCase):
+    maxDiff = None
 
-    @unittest.skip("Not Implemented")
-    def test_prettify_preserves_dir_structure(self):
-        raise self.failureException("not implemented")
+    def setUp(self):
+        self.exp = experiment.Experiment('0-blank', '1-singlepara')
 
-    @unittest.skip("Not Implemented")
-    def test_new_file_detection(self):
-        raise self.failureException("not implemented")
+    def test_extract_docx_file_left(self):
+        if os.path.exists(self.exp.ugly_dir_paths[0]):
+            shutil.rmtree(self.exp.ugly_dir_paths[0])
+        self.assertFalse(os.path.exists(self.exp.ugly_dir_paths[0]))
 
-    @unittest.skip("Not Implemented")
-    def test_changed_file_detection(self):
-        raise self.failureException("not implemented")
+        self.exp.extract_left()
+        self.assertTrue(os.path.exists(self.exp.ugly_dir_paths[0]), "docx file not extracted or extracted to the wrong place.")
 
-    @unittest.skip("Not Implemented")
-    def test_report_dir_structure_as_expected(self):
-        raise self.failureException("not implemented")
+    def test_extract_docx_file_right(self):
+        if os.path.exists(self.exp.ugly_dir_paths[1]):
+            shutil.rmtree(self.exp.ugly_dir_paths[1])
+        self.assertFalse(os.path.exists(self.exp.ugly_dir_paths[1]))
+
+        self.exp.extract_right()
+        self.assertTrue(os.path.exists(self.exp.ugly_dir_paths[1]), "docx file not extracted or extracted to the wrong place.")
+
+    def test_prettify_preserves_dir_structure_left(self):
+        self.exp.prettify_left()
+        for path in self.exp.pretty_file_paths[0]:
+            self.assertTrue(os.path.isfile(path) or os.path.isdir(path), "Couldn't find dir or file at {}".format(data_relative(path)))
+
+    def test_prettify_preserves_dir_structure_right(self):
+        self.exp.prettify_right()
+        for path in self.exp.pretty_file_paths[1]:
+            self.assertTrue(os.path.isfile(path) or os.path.isdir(path), "Couldn't find dir or file at {}".format(data_relative(path)))
+
+    def test_changed_files_detection(self):
+        changed_files_target = [
+            'docProps/app.xml',
+            'docProps/core.xml',
+            'word/document.xml',
+            'word/settings.xml',
+        ]
+        changed_files_result = self.exp.changed_files
+        self.assertItemsEqual(changed_files_target, changed_files_result)
+
+    def test_diff_reports_created(self):
+        diff_reports_target = [
+            'docProps__app_xml__context_diff.xml',
+            'docProps__app_xml__n_diff.xml',
+            'docProps__app_xml__unified_diff.xml',
+            'docProps__core_xml__context_diff.xml',
+            'docProps__core_xml__n_diff.xml',
+            'docProps__core_xml__unified_diff.xml',
+            'word__document_xml__context_diff.xml',
+            'word__document_xml__n_diff.xml',
+            'word__document_xml__unified_diff.xml',
+            'word__settings_xml__context_diff.xml',
+            'word__settings_xml__n_diff.xml',
+            'word__settings_xml__unified_diff.xml',
+        ]
+        self.exp.write_diff_reports()
+        diff_reports_result = dirdiff.walk_dir(self.exp.exp_dir_path)
+        self.assertItemsEqual(diff_reports_target, relative(diff_reports_result, self.exp.exp_dir_path))
 
 def test():
     runner = unittest.TextTestRunner(resultclass=testutils.CustomResult)

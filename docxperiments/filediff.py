@@ -6,7 +6,7 @@ def get_diff_battery(a_path, b_path):
     _context_diff = get_context_diff(a_path, b_path)
     _ndiff = get_ndiff(a_path, b_path)
     _unified_diff = get_unified_diff(a_path, b_path)
-    return ''.join([_context_diff, _ndiff, _unified_diff])
+    return (_context_diff, _ndiff, _unified_diff)
 
 def get_context_diff(a_path, b_path):
     a_lines = _readlines(a_path)

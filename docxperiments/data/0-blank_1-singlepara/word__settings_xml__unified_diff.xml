@@ -1,0 +1,18 @@
+--- 
++++ 
+@@ -20,6 +20,7 @@
+   <w:rsid w:val="00617040"/>
+   <w:rsid w:val="007121C7"/>
+   <w:rsid w:val="00807D2E"/>
++  <w:rsid w:val="009D3123"/>
+   <w:rsid w:val="00B43A8C"/>
+   <w:rsid w:val="00BA1E7D"/>
+   <w:rsid w:val="00BB4A23"/>
+@@ -27,6 +28,7 @@
+   <w:rsid w:val="00E7316D"/>
+   <w:rsid w:val="00EB015A"/>
+   <w:rsid w:val="00F872B2"/>
++  <w:rsid w:val="00FD3E79"/>
+  </w:rsids>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
