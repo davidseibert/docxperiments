@@ -1,10 +1,10 @@
 # coding: utf-8
 
 import context, testutils, unittest
-from docxperiments import experiment, PROJECT_DIR, PACKAGE_DIR, DATA_DIR, dirdiff
+from docxperiments import experiment, dirdiff
 import os
 import shutil
-from docxperiments.pathutils import project_rel, package_rel, data_rel, mkrel, specimens_rel, experiments_rel
+from docxperiments.pathutils import project_rel, package_rel, data_rel, mkrel, specimens_rel, experiments_rel, PROJECT_DIR, PACKAGE_DIR, DATA_DIR
 
 
 

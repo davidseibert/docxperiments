@@ -1,12 +1,12 @@
 *** 
 --- 
 ***************
-*** 27,32 ****
---- 27,33 ----
+*** 22,27 ****
+--- 22,28 ----
+    <w:rsid w:val="00807D2E"/>
+    <w:rsid w:val="009D3123"/>
+    <w:rsid w:val="00B43A8C"/>
++   <w:rsid w:val="00B61498"/>
+    <w:rsid w:val="00BA1E7D"/>
+    <w:rsid w:val="00BB4A23"/>
     <w:rsid w:val="00D200D2"/>
-    <w:rsid w:val="00E7316D"/>
-    <w:rsid w:val="00EB015A"/>
-+   <w:rsid w:val="00F564C0"/>
-    <w:rsid w:val="00F872B2"/>
-    <w:rsid w:val="00FD3E79"/>
-   </w:rsids>

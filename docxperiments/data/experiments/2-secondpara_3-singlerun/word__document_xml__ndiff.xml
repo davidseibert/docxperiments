@@ -8,8 +8,14 @@
       </w:t>
      </w:r>
     </w:p>
-    <w:p w14:paraId="60C4CAE9" w14:textId="6037BB23" w:rsidR="00F564C0" w:rsidRDefault="00F564C0">
-     <w:r w:rsidRPr="00F564C0">
+-   <w:p w14:paraId="6657B44B" w14:textId="24C88B5A" w:rsidR="00B61498" w:rsidRDefault="00B61498">
+?                     ^^^^ ^^               ^^^^^^^             ^ - ^^                    ^ - ^^
++   <w:p w14:paraId="60C4CAE9" w14:textId="6037BB23" w:rsidR="00F564C0" w:rsidRDefault="00F564C0">
+?                     ^^ ^^^^              ++++++ ^             ^^  ^^                    ^^  ^^
+-    <w:r w:rsidRPr="00B61498">
+?                      ^ - ^^
++    <w:r w:rsidRPr="00F564C0">
+?                      ^^  ^^
       <w:t xml:space="preserve">
 +      The ten-dollar founding
 +     </w:t>
@@ -45,7 +51,10 @@
 -    <w:bookmarkStart w:id="0" w:name="_GoBack"/>
 -    <w:bookmarkEnd w:id="0"/>
     </w:p>
-    <w:sectPr w:rsidR="00F564C0" w:rsidSect="00E7316D">
+-   <w:sectPr w:rsidR="00B61498" w:rsidSect="00E7316D">
+?                        ^ - ^^
++   <w:sectPr w:rsidR="00F564C0" w:rsidSect="00E7316D">
+?                        ^^  ^^
      <w:pgSz w:h="15840" w:w="12240"/>
      <w:pgMar w:bottom="1440" w:footer="720" w:gutter="0" w:header="720" w:left="1440" w:right="1440" w:top="1440"/>
      <w:cols w:space="720"/>

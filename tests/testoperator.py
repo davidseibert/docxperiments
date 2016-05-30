@@ -1,9 +1,9 @@
 # coding: utf-8
 
 import context, testutils, unittest
-from docxperiments import experiment, PROJECT_DIR, PACKAGE_DIR, DATA_DIR, dirdiff
+from docxperiments import experiment, dirdiff
 from docxperiments import operator
-from docxperiments.pathutils import data_rel
+from docxperiments.pathutils import data_rel, PROJECT_DIR, PACKAGE_DIR, DATA_DIR
 
 class OperatorTest(unittest.TestCase):
     maxDiff = None
