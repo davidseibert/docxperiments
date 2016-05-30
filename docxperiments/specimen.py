@@ -1,8 +1,9 @@
 # coding: utf-8
 
-from pathutils import mkpath, data_abs, ls, mkrel, mkdir, specimens_abs
+from pathutils import mkpath, data_abs, ls, mkrel, mkdir, specimens_abs, data_rel
 from prettify import prettify_xml
 from zipfile import ZipFile
+import logging
 
 
 class Specimen(object):
@@ -19,6 +20,22 @@ class Specimen(object):
 
         """
         self.name = name
+        self.logger = logging.getLogger('SPEC: ' + self.name)
+        self.path = specimens_abs(self.name)
+        self.logger.debug("Path set to {}".format(self.path))
+        self.docx = mkpath(self.path, self.name+'.docx')
+        self.logger.debug("Docx set to {}".format(self.docx))
+        self.ugly = mkpath(self.path, 'ugly')
+        self.logger.debug("Ugly directory set to {}".format(self.ugly))
+        self.pretty = mkpath(self.path, 'pretty')
+        self.logger.debug("Pretty directory set to {}".format(self.pretty))
+        self.uglies = ls(self.ugly)
+        self.logger.debug("Ugly files set to {}".format(self.uglies))
+        self.pretties = [self._transpose(path) for path in self.uglies]
+        self.logger.debug("Pretty files set to {}".format(self.pretties))
+
+    def __repr__(self):
+        return "{}('{}')".format(self.__class__.__name__, self.name)
 
     def extract(self):
         """
@@ -26,6 +43,7 @@ class Specimen(object):
         into a directory called 'ugly' in the same directory.
 
         """
+        self.logger.debug("Extracting '{}' to '{}'".format(data_rel(self.docx), data_rel(self.ugly)))
         archive = ZipFile(self.docx)
         archive.extractall(self.ugly)
 
@@ -35,6 +53,7 @@ class Specimen(object):
         and write them into the neighboring 'pretty' directory.
 
         """
+        self.logger.debug("Prettifying")
         mkdir(self.pretty)
         for ugly, pretty in zip(self.uglies, self.pretties):
             try:
@@ -44,62 +63,6 @@ class Specimen(object):
             else:
                 with open(pretty, 'w') as f:
                     f.write(pretty_str.encode('utf-8'))
-
-    @property
-    def path(self):
-        """
-        The directory holding this specimen's docx file,
-        ugly XML directory, and pretty XML directory.
-
-        :return: directory path
-        :rtype: string
-        """
-        return specimens_abs(self.name)
-    @property
-    def docx(self):
-        """
-        The path to this specimen's docx file.
-
-        :return: docx file path
-        :rtype: string
-        """
-        return mkpath(self.path, self.name+'.docx')
-    @property
-    def ugly(self):
-        """
-        The path to this specimen's ugly XML directory.
-
-        :return: directory path
-        :rtype: string
-        """
-        return mkpath(self.path, 'ugly')
-    @property
-    def pretty(self):
-        """
-        The path to this specimen's pretty XML directory.
-
-        :return: directory path
-        :rtype: string
-        """
-        return mkpath(self.path, 'pretty')
-    @property
-    def uglies(self):
-        """
-        The paths to this specimen's various ugly files.
-
-        :return: ugly file paths
-        :rtype: list
-        """
-        return ls(self.ugly)
-    @property
-    def pretties(self):
-        """
-        The paths to this specimen's various pretty files.
-
-        :return: pretty file paths
-        :rtype: list
-        """
-        return [self._transpose(path) for path in self.uglies]
 
     def _transpose(self, path):
         """
@@ -111,4 +74,6 @@ class Specimen(object):
         :return: pretty path
         :rtype: string
         """
-        return mkpath(self.pretty, mkrel(path, self.ugly))
+        new_path = mkpath(self.pretty, mkrel(path, self.ugly))
+        self.logger.debug("Transposed {} to {}".format(path, new_path))
+        return new_path

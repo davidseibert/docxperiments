@@ -1,6 +1,9 @@
 from difflib import context_diff, ndiff, unified_diff
-from pathutils import mkpath
+from pathutils import mkpath, specimens_rel
 import os, filecmp
+import logging
+
+logger = logging.getLogger(__name__)
 
 class Diff(object):
     def __init__(self, a_path, b_path):
@@ -53,10 +56,19 @@ def _readlines(file_path):
         return lines
 
 def changed(a_path, b_path):
+    logger.info("Checking for changes in '{}' and '{}'...".format(specimens_rel(a_path), specimens_rel(b_path)))
     if os.path.isdir(a_path) or os.path.isdir(b_path):
+        logger.info("Dir detected in '{}' or '{}'; returning False".format(specimens_rel(a_path), specimens_rel(b_path)))
         return False
     else:
-        return not filecmp.cmp(a_path, b_path)
+        diff = ContextDiff(a_path, b_path)
+        diffstr = str(diff)
+        if len(diffstr) == 0:
+            change_detected = False
+        else:
+            change_detected = True
+        logger.info("Changed = {}".format(change_detected))
+        return change_detected
 
 def main():
     a_path = '../tests/testdata/a.xml'

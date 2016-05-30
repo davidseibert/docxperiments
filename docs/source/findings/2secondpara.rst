@@ -88,4 +88,25 @@ What happened? Somehow, the second paragraph got divided
 into a pair of runs. I recreated the docx and the same
 thing happened, in the same location. I wonder what it means.
 
+Other Changes
+~~~~~~~~~~~~~
 
+Another :code:`<w:rsid>` in :code:`word/settings.xml`: :code:`<w:rsid w:val="00B61498"/>`
+
+What does it mean?
+
+The :code:`<sectionProperty>` tag changed:
+the :code:`<w:rsidR>` attribute changed
+from "00617040" to "00B61498"...
+Which is also the number from just above...
+
+The :code:`docProps/app.xml` counts changed again:
+
+- :code:`Words` from 29 to 59
+- :code:`Characters` from 166 to 337
+- :code:`Lines` from 1 to 2
+- :code:`CharacterWithSpaces` from 194 to 395
+
+:code:`Paragraphs`...did not change...?! Still 1.
+Maybe because I didn't put a linefeed at the end
+of the second paragraph?

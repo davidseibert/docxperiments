@@ -197,7 +197,7 @@ class ExperimentFileOperationsTest(unittest.TestCase):
             'word/document.xml',
             'word/settings.xml',
         ]
-        changed_files_result = self.exp.changed
+        changed_files_result = self.exp.get_changed
         self.assertItemsEqual(changed_files_target, changed_files_result)
 
     def test_diff_reports_created(self):

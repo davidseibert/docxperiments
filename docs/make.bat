@@ -33,7 +33,7 @@ if "%1" == "help" (
 	echo.  man        to make manual pages
 	echo.  texinfo    to make Texinfo files
 	echo.  gettext    to make PO message catalogs
-	echo.  changes    to make an overview over all changed/added/deprecated items
+	echo.  changes    to make an overview over all get_changed/added/deprecated items
 	echo.  xml        to make Docutils-native XML files
 	echo.  pseudoxml  to make pseudoxml-XML files for display purposes
 	echo.  linkcheck  to check all external links for integrity
