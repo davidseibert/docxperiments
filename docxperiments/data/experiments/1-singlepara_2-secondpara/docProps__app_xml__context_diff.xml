@@ -1,0 +1,59 @@
+*** 
+--- 
+***************
+*** 10,19 ****
+    1
+   </Pages>
+   <Words>
+!   29
+   </Words>
+   <Characters>
+!   166
+   </Characters>
+   <Application>
+    Microsoft Macintosh Word
+--- 10,19 ----
+    1
+   </Pages>
+   <Words>
+!   59
+   </Words>
+   <Characters>
+!   337
+   </Characters>
+   <Application>
+    Microsoft Macintosh Word
+***************
+*** 22,28 ****
+    0
+   </DocSecurity>
+   <Lines>
+!   1
+   </Lines>
+   <Paragraphs>
+    1
+--- 22,28 ----
+    0
+   </DocSecurity>
+   <Lines>
+!   2
+   </Lines>
+   <Paragraphs>
+    1
+***************
+*** 34,40 ****
+    false
+   </LinksUpToDate>
+   <CharactersWithSpaces>
+!   194
+   </CharactersWithSpaces>
+   <SharedDoc>
+    false
+--- 34,40 ----
+    false
+   </LinksUpToDate>
+   <CharactersWithSpaces>
+!   395
+   </CharactersWithSpaces>
+   <SharedDoc>
+    false
