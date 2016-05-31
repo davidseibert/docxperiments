@@ -1,43 +1,43 @@
 #!/usr/bin/env python
 
-import context
-import sys, logging
-from docxperiments.pathutils import mkpath
+# stdlib
+import sys, logging, os
 from zipfile import ZipFile
 
-STAGE_DIR = 'stages'
-STAGE_NAME = '0-original'
-DOCX_NAME = 'natural.docx'
-DESTINATION_DIR = 'ugly'
+# config import path
+sys.path.append('/Users/david/dev/docxperiments')
 
-log_format = '%(name)s: %(message)s'
+# local modules
+from docxperiments.pathutils import mkpath, ls
+
+# set up logger
+log_format = 'undx: %(message)s'
 logging.basicConfig(level=logging.INFO, format=log_format)
-logger = logging.getLogger('undx')
-logger.info("Hello")
+logger = logging.getLogger(__name__)
 
 
-def _natural_docx_path(stage_name):
-    path = mkpath(STAGE_DIR, stage_name, DOCX_NAME)
-    return path
+def decompose(stage_path):
+    natural_docx_path = mkpath(stage_path, 'natural.docx')
+    destination_path = mkpath(stage_path, 'decomposed')
 
-def _ugly_path(stage_name):
-    path = mkpath(STAGE_DIR, stage_name, DESTINATION_DIR)
-    return path
-
-def analyze(stage_path):
-    natural_docx_path = _natural_docx_path(stage_path)
-    logger.info("Making ZipFile from '{}'".format(natural_docx_path))
+    logger.info("DOCX: '{}'".format(natural_docx_path))
     natural_archive = ZipFile(natural_docx_path)
-    destination_path = _ugly_path(stage_path)
-    logger.info("Extracting ZipFile to '{}'".format(destination_path))
+
+    logger.info("Decomposed dir: '{}'".format(destination_path))
     natural_archive.extractall(destination_path)
+    extracted_file_paths = ls(destination_path)
+    logger.info("Extracted {} files".format(len(extracted_file_paths)))
+    logger.debug("Extracted {} files: {}".format(len(extracted_file_paths), extracted_file_paths))
 
 def main():
     args = sys.argv
-    stage_path = args[1]
+    if len(args) == 1:
+        stage_path = os.path.realpath(".")
+    else:
+        stage_path = os.path.realpath(args[1])
     logger.info("Using '{}' for stage path".format(stage_path))
-    logger.info("Analyzing '{}'".format(stage_path))
-    analyze(stage_path)
+    logger.info("Decomposing '{}'".format(stage_path))
+    decompose(stage_path)
 
 if __name__ == '__main__':
     main()

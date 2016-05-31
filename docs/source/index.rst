@@ -15,10 +15,12 @@ Experiments in OOXML
 Contents:
 
 .. toctree::
+   :maxdepth: 2
 
    intro
    materialsandmethods/index
    findings/index
+   synthesis/index
 
 
 
