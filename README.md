@@ -111,7 +111,7 @@ the nonsense and see what is really happening. Here is a sample progression:
 
 ### 4. Runs
 
-Adding some bold and italic text creates an explosion in tags::
+Adding some bold and italic text creates an explosion in tags:
 
 ```xml
 <body>
@@ -202,7 +202,7 @@ Adding some bold and italic text creates an explosion in tags::
 
 It turns out that most of Word's OOXML verbosity is optional.
 If you take the last document above, in it's native form,
-it actually looks like this (except compressed to a single line)::
+it actually looks like this (except compressed to a single line):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -403,30 +403,30 @@ But a lot of it can be ignored:
 
 1. The `w:rsidR` tags can be removed.
 2. The `w:rsidRPr` tags can be removed.
-3. The `w14:textID` and :code:`w14:paraID` tags can be removed.
+3. The `w14:textID` and `w14:paraID` tags can be removed.
 4. The `w:rsidDefault` tags can be removed.
 5. The `w:rsidSect` tag can be removed.
-6. The `w:bookmarkStart` and :code:`w:bookmarkEnd` tags can be removed.
+6. The `w:bookmarkStart` and `w:bookmarkEnd` tags can be removed.
 
 It's all noise.
 This document can be much simpler with just a few tag substitutions:
 
-1. :code:`<r><t>`: --> :code:`<n>`
+1. `<r><t>` --> `<n>`
 
    This is just normal, unstyled text.
    I don't know why it needs markup.
    To be be conservative, I'll give it the tag 'n' for 'normal'.
 
-2. :code:`<r><rPr><b/></rPr><t>` --> :code:`<b>`
+2. `<r><rPr><b/></rPr><t>` --> `<b>`
 
    Because obviously.
 
-3. :code:`<r><rPr><i/></rPr><t>` --> :code:`<i>`
+3. `<r><rPr><i/></rPr><t>` --> `<i>`
 
    Because obviously.
 
 Leaving aside the schemas and section properties for now,
-here is the new markup::
+here is the new markup:
 
 ```xml
 <docx>
@@ -451,15 +451,6 @@ here is the new markup::
 Not bad. Let's build ourselves a compiler.
 
 ```python
-import os, difflib
-from bs4 import BeautifulSoup
-simplified_doc_xml = \
-    os.path.realpath(
-        '../../../synthesis/stages/'
-        '13.8-documentxml_redundant_runs_removed'
-        '/decomposed/word/document.xml')
-with open(simplified_doc_xml) as f:
-    target_markup = f.read()
 with open('docx_boilerplate.xml', 'r') as f:
     docx_boilerplate = f.read()[:-1]
 with open('section_properties.xml', 'r') as f:
