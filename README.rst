@@ -452,112 +452,47 @@ here is the new markup::
 Not bad. Let's build ourselves a compiler.
 
 .. highlight:: python
-.. doctest::
 
-    >>> import os, difflib
-    >>> from bs4 import BeautifulSoup
-    >>> simplified_doc_xml = \
-    ...     os.path.realpath(
-    ...         '../../../synthesis/stages/'
-    ...         '13.8-documentxml_redundant_runs_removed'
-    ...         '/decomposed/word/document.xml')
-    >>> os.path.exists(simplified_doc_xml)
-    True
-    >>> with open(simplified_doc_xml) as f:
-    ...     target_markup = f.read()
-    >>> print target_markup # doctest: +ELLIPSIS
-    <?xml version="1.0"...
-    >>> with open('docx_boilerplate.xml', 'r') as f:
-    ...     docx_boilerplate = f.read()[:-1]
-    >>> print docx_boilerplate # doctest: +ELLIPSIS
-    <?xml version="1.0"...
-    >>> with open('section_properties.xml', 'r') as f:
-    ...     section_properties = f.read()
-    >>> print section_properties # doctest: +ELLIPSIS
-    <w:sectPr ><w:pgSz w:w="12240"...
-    >>> with open('test_markup.xml', 'r') as f:
-    ...     test_markup = f.read()
-    >>> print test_markup # doctest: +ELLIPSIS
-    <docx><body><p><n>How does a bastard...
-    >>> replacements = [
-    ...     ('<n>', '<w:r><w:t xml:space="preserve">'),
-    ...     ('<b>', '<w:r><w:rPr><w:b/></w:rPr><w:t>'),
-    ...     ('<i>', '<w:r><w:rPr><w:i/></w:rPr><w:t>'),
-    ...     ('</n>', '</w:t></w:r>'),
-    ...     ('</b>', '</w:t></w:r>'),
-    ...     ('</i>', '</w:t></w:r>'),
-    ...     ('<p>', '<w:p>'),
-    ...     ('</p>', '</w:p>'),
-    ...     ('<sectionProperties/>', section_properties),
-    ...     ('<body>', '<w:body>'),
-    ...     ('</body>', '</w:body>'),
-    ...     ('<docx>', docx_boilerplate),
-    ...     ('</docx>', '</w:document>'),
-    ...     ]
-    >>> intermediate = test_markup
-    >>> for i, j in replacements:
-    ...     intermediate = intermediate.replace(i, j)
-    >>> with open('output.xml', 'w') as f:
-    ...     f.write(intermediate)
-    >>> pretty_test_markup = \
-    ...     BeautifulSoup(intermediate, "xml").prettify()
-    >>> pretty_target_markup = \
-    ...     BeautifulSoup(target_markup, "xml").prettify()
-    >>> diff = difflib.unified_diff(
-    ...     pretty_target_markup.split("\n"),
-    ...     pretty_test_markup.split("\n")
-    ...     )
-    >>> print '\n'.join([ line for line in diff]) # doctest: +NORMALIZE_WHITESPACE
-    ---
-    <BLANKLINE>
-    +++
-    <BLANKLINE>
-    @@ -3,14 +3,14 @@
-    <BLANKLINE>
-      <w:body>
-       <w:p>
-        <w:r>
-    -    <w:t>
-    +    <w:t xml:space="preserve">
-          How does a bastard, orphan, son of a whore,
-          and a Scotsman, dropped in the middle of a
-          forgotten spot in the Caribbean,
-          by providence impoverished in squalor,
-          grow up to be a hero and a scholar?
-         </w:t>
-        </w:r>
-       </w:p>
-       <w:p>
-        <w:r>
-    -    <w:t>
-    +    <w:t xml:space="preserve">
-          The ten-
-         </w:t>
-        </w:r>
-    @@ -88,7 +88,7 @@
-    <BLANKLINE>
-         </w:t>
-        </w:r>
-        <w:r>
-    -    <w:t>
-    +    <w:t xml:space="preserve">
-          , by being a self-
-         </w:t>
-        </w:r>
-    @@ -127,7 +127,7 @@
-    <BLANKLINE>
-         </w:t>
-        </w:r>
-        <w:r>
-    -    <w:t>
-    +    <w:t xml:space="preserve">
-          .
-         </w:t>
-        </w:r>
+::
 
-Obviously, I need to touch up the preserve spacing,
-but pop the output into the archive and you've
-got yourself a working docx compiler. Huzzah!
+    import os, difflib
+    from bs4 import BeautifulSoup
+    simplified_doc_xml = \
+        os.path.realpath(
+            '../../../synthesis/stages/'
+            '13.8-documentxml_redundant_runs_removed'
+            '/decomposed/word/document.xml')
+    with open(simplified_doc_xml) as f:
+        target_markup = f.read()
+    with open('docx_boilerplate.xml', 'r') as f:
+        docx_boilerplate = f.read()[:-1]
+    with open('section_properties.xml', 'r') as f:
+        section_properties = f.read()
+    with open('test_markup.xml', 'r') as f:
+        test_markup = f.read()
+    replacements = [
+        ('<n>', '<w:r><w:t xml:space="preserve">'),
+        ('<b>', '<w:r><w:rPr><w:b/></w:rPr><w:t>'),
+        ('<i>', '<w:r><w:rPr><w:i/></w:rPr><w:t>'),
+        ('</n>', '</w:t></w:r>'),
+        ('</b>', '</w:t></w:r>'),
+        ('</i>', '</w:t></w:r>'),
+        ('<p>', '<w:p>'),
+        ('</p>', '</w:p>'),
+        ('<sectionProperties/>', section_properties),
+        ('<body>', '<w:body>'),
+        ('</body>', '</w:body>'),
+        ('<docx>', docx_boilerplate),
+        ('</docx>', '</w:document>'),
+        ]
+    intermediate = test_markup
+    for i, j in replacements:
+        intermediate = intermediate.replace(i, j)
+    with open('output.xml', 'w') as f:
+        f.write(intermediate)
+
+Pop the output into the archive and you've
+got yourself a working (albeit naive) docx compiler. Huzzah!
 
 What next?
 ----------
