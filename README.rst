@@ -1,10 +1,213 @@
-word/document.xml
------------------
+=============
+Docxperiments
+=============
 
 .. highlight:: xml
 
-This, obviously, is the main piece of the package.
-The original looks like this, in essence::
+-----------------------------------
+Experiments in Microsoft Word OOXML
+-----------------------------------
+
+Why is it so hard to produce a decent Word file these days?
+Pandoc and docutils can get you part of the way, but the limitations 
+quickly become clear. There are some good libraries (cheers, python-docx),
+but even that can have limitations. More importantly, hiding the markup
+behind a library begs the question: Why is it so hard?
+
+A few problems:
+
+1. The Word OOXML is hidden inside a zipped .docx file, 
+   such that most users, even hackers, 
+   aren't aware that they have direct access to it.
+
+2. Despite being an 'open' schema, the way that Word uses
+   and writes the OOXML is pretty opaque. If you edit the markup
+   directly and Word doesn't like it, you'll get a useless error
+   message and be sent on your way.
+
+3. Word OOXML is an insanely, obscenely, pointlessly verbose markup language.
+   This hides the fact that a Word OOXML document is fairly predictable and
+   even simple.
+
+This is a collection of prods and pokes into OOXML, with the vague hope that
+at some point we can have a set of functional and robust tools for generating 
+OOXML. 
+
+Reverse Engineering
+-------------------
+
+Part of the process is building up the DOM gradually and seeing what
+Word produces in the OOXML. Using some pseudo-OOXML, we can cut through
+the nonsense and see what is really happening. Here is a sample progression:
+
+1. Blank Document
+~~~~~~~~~~~~~~~~~
+::
+
+    <body>
+     <p>
+      <bookmarkStart/>
+      <bookmarkEnd/>
+     </p>
+     <sectionProperty>
+      <pageSize/>
+      <pageMargin/>
+      <cols>
+      <docGrid>
+     </sectionProperty>
+    </body>
+
+2. Single Paragraph
+~~~~~~~~~~~~~~~~~~~
+::
+
+    <body>
+     <p>
+      <r>
+       <t>
+         How does a bastard, orphan, son of a whore,
+         and a Scotsman, dropped in the middle of
+         a forgotten spot in the Caribbean,
+         by providence impoverished in squalor,
+         grow up to be a hero and a scholar?
+       </t>
+      </r>
+      <bookmarkStart/>
+      <bookmarkEnd/>
+     </p>
+    </body>
+
+3. Two Paragraphs
+~~~~~~~~~~~~~~~~~
+::
+
+    <body>
+     <p>
+      <r>
+       <t>
+        How does a bastard, orphan, son of a whore,
+        and a Scotsman, dropped in the middle of
+        a forgotten spot in the Caribbean,
+        by providence impoverished in squalor,
+        grow up to be a hero and a scholar?
+       </t>
+      </r>
+     </p>
+     <p>
+      <r>
+       <t>
+        The ten-dollar founding father without a father
+        got a lot farther by working a lot harder,
+        by being a lot smarter, by being a self-starter;
+        by fourteen, they placed him
+        in charge of a trading charter.
+       </t>
+      </r>
+      <bookmarkStart/>
+      <bookmarkEnd/>
+     </p>
+     <sectionProperty>
+      <pageSize/>
+      <pageMargin/>
+      <cols>
+      <docGrid>
+     </sectionProperty>
+    </body>
+
+4. Runs
+~~~~~~~
+
+Adding some bold and italic text creates an explosion in tags::
+
+    <body>
+      <p>   <!-- paragraph #1 -->
+       <r><t>   <!-- regular -->
+         How does a bastard, orphan, son of a whore,
+         and a Scotsman, dropped in the middle of a
+         forgotten spot in the Caribbean, by providence
+         impoverished in squalor, grow up to be a hero
+         and a scholar?
+        </t></r>
+      </p>
+      <p>   <!-- paragraph #2 -->
+       <r><t>   <!-- regular -->
+         The ten-
+        </t></r>
+       <r><rPr><b/></rPr><t>    <!-- bold -->
+         dollar
+        </t></r>
+       <r><t xml:space="preserve">  <!-- regular -->
+         founding
+        </t></r>
+       <r><rPr><b/></rPr><t>    <!-- bold -->
+         father
+        </t></r>
+       <r><t xml:space="preserve">  <!-- regular -->
+         without a
+        </t></r>
+       <r><rPr><b/></rPr><t>    <!-- bold -->
+         father
+        </t></r>
+       <r><t xml:space="preserve">  <!-- regular -->
+         got a
+        </t></r>
+       <r><t xml:space="preserve">  <!-- regular -->
+         lot
+        </t></r>
+       <r><rPr><b/></rPr><t>    <!-- bold -->
+         farther
+        </t></r>
+       <r><t xml:space="preserve">  <!-- regular -->
+         by working a lot
+        </t></r>
+       <r><rPr><b/></rPr><t>    <!-- bold -->
+         harder
+        </t></r>
+       <r><t xml:space="preserve">  <!-- regular -->
+         , by being a lot
+        </t></r>
+       <r><rPr><b/></rPr><t>    <!-- bold -->
+         smarter
+        </t></r>
+       <r><t>   <!-- regular -->
+         , by being a self-
+        </t></r>
+       <r><rPr><b/></rPr><t>    <!-- bold -->
+         starter
+        </t></r>
+       <r><t xml:space="preserve">  <!-- regular -->
+         ; by fourteen, they placed him
+        </t></r>
+       <r><t xml:space="preserve">  <!-- regular -->
+         in
+        </t></r>
+       <r><rPr><i/></rPr><t>    <!-- italic -->
+         charge
+        </t></r>
+       <r><t xml:space="preserve">  <!-- regular -->
+         of a trading
+        </t></r>
+       <r><rPr><b/></rPr><t>    <!-- bold -->
+         charter
+        </t></r>
+       <r><t>   <!-- regular -->
+         .
+        </t></r>
+      </p>
+     <sectionProperty>
+      <pageSize/>
+      <pageMargin/>
+      <cols>
+      <docGrid>
+     </sectionProperty>
+    </body>
+
+Synthesis
+~~~~~~~~~
+
+It turns out that most of Word's OOXML verbosity is optional.
+If you take the last document above, in it's native form,
+it actually looks like this (except compressed to a single line)::
 
     <?xml version="1.0" encoding="utf-8"?>
     <w:document mc:Ignorable="w14 w15 wp14"
@@ -198,8 +401,8 @@ The original looks like this, in essence::
      </w:body>
     </w:document>
 
-And this is a two-paragraph document! This does not bode well.
-Let's see what simplifications are available:
+And this is a two-paragraph document!
+But a lot of it can be ignored:
 
 1. The :code:`w:rsidR` tags can be removed.
 2. The :code:`w:rsidRPr` tags can be removed.
@@ -208,161 +411,25 @@ Let's see what simplifications are available:
 5. The :code:`w:rsidSect` tag can be removed.
 6. The :code:`w:bookmarkStart` and :code:`w:bookmarkEnd` tags can be removed.
 
-That leaves us with the following. I've taken out
-the :code:`w:` prefix on everything,
-the :code:`w:document` attributes, and I collapsed the run tags::
+It's all noise.
+This document can be much simpler with just a few tag substitutions:
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <document>
-     <body>
-      <p>   <!-- paragraph #1 -->
-       <r><t>   <!-- regular -->
-         How does a bastard, orphan, son of a whore,
-         and a Scotsman, dropped in the middle of a
-         forgotten spot in the Caribbean, by providence
-         impoverished in squalor, grow up to be a hero
-         and a scholar?
-        </t></r>
-      </p>
-      <p>   <!-- paragraph #2 -->
-       <r><t>   <!-- regular -->
-         The ten-
-        </t></r>
-       <r><rPr><b/></rPr><t>    <!-- bold -->
-         dollar
-        </t></r>
-       <r><t xml:space="preserve">  <!-- regular -->
-         founding
-        </t></r>
-       <r><rPr><b/></rPr><t>    <!-- bold -->
-         father
-        </t></r>
-       <r><t xml:space="preserve">  <!-- regular -->
-         without a
-        </t></r>
-       <r><rPr><b/></rPr><t>    <!-- bold -->
-         father
-        </t></r>
-       <r><t xml:space="preserve">  <!-- regular -->
-         got a
-        </t></r>
-       <r><t xml:space="preserve">  <!-- regular -->
-         lot
-        </t></r>
-       <r><rPr><b/></rPr><t>    <!-- bold -->
-         farther
-        </t></r>
-       <r><t xml:space="preserve">  <!-- regular -->
-         by working a lot
-        </t></r>
-       <r><rPr><b/></rPr><t>    <!-- bold -->
-         harder
-        </t></r>
-       <r><t xml:space="preserve">  <!-- regular -->
-         , by being a lot
-        </t></r>
-       <r><rPr><b/></rPr><t>    <!-- bold -->
-         smarter
-        </t></r>
-       <r><t>   <!-- regular -->
-         , by being a self-
-        </t></r>
-       <r><rPr><b/></rPr><t>    <!-- bold -->
-         starter
-        </t></r>
-       <r><t xml:space="preserve">  <!-- regular -->
-         ; by fourteen, they placed him
-        </t></r>
-       <r><t xml:space="preserve">  <!-- regular -->
-         in
-        </t></r>
-       <r><rPr><i/></rPr><t>    <!-- italic -->
-         charge
-        </t></r>
-       <r><t xml:space="preserve">  <!-- regular -->
-         of a trading
-        </t></r>
-       <r><rPr><b/></rPr><t>    <!-- bold -->
-         charter
-        </t></r>
-       <r><t>   <!-- regular -->
-         .
-        </t></r>
-      </p>
-      <sectPr>
-       <pgSz    h="15840"
-                w="12240"/>
-       <pgMar   bottom="1440"
-                footer="720"
-                gutter="0"
-                header="720"
-                left="1440"
-                right="1440"
-                top="1440"/>
-       <cols space="720"/>
-       <docGrid linePitch="360"/>
-      </sectPr>
-     </body>
-    </document>
+1. :code:`<r><t>`: --> :code:`<n>`
 
-One more thing in terms of modifying document.xml itself:
-A few of these runs don't seem to be necessary::
+   This is just normal, unstyled text.
+   I don't know why it needs markup.
+   To be be conservative, I'll give it the tag 'n' for 'normal'.
 
-    <r><t xml:space="preserve">  <!-- regular -->
-      got a
-     </t></r>
-    <r><t xml:space="preserve">  <!-- regular -->
-      lot
-     </t></r>
-     . . .
-    <r><t xml:space="preserve">  <!-- regular -->
-      ; by fourteen, they placed him
-     </t></r>
-    <r><t xml:space="preserve">  <!-- regular -->
-      in
-     </t></r>
+2. :code:`<r><rPr><b/></rPr><t>` --> :code:`<b>`
 
-Done::
+   Because obviously.
 
-    <r><t xml:space="preserve">  <!-- regular -->
-      got a lot
-     </t></r>
-     . . .
-    <r><t xml:space="preserve">  <!-- regular -->
-      ; by fourteen, they placed him in
-     </t></r>
+3. :code:`<r><rPr><i/></rPr><t>` --> :code:`<i>`
 
-So, by this point the document has become fairly simple.
-Most of the complication is due to the bizarre OOXML markup
-scheme. What is the point of the :code:`<t>` tag?
-I think we can get rid of them. We can get rid
-of a *lot* of this mess.
+   Because obviously.
 
-New Markup
-~~~~~~~~~~
-
-I'll just make a few substitutions:
-
-:code:`<t xml:space="preserve">` --> Nothing.
-
-The obvious point is to mark the elements where spacing is literal.
-It seems simple to include a rule in a parser that says any multi-word
-element preserves space.
-
-:code:`<r><t>`: --> :code:`<n>`
-
-This is just normal, unstyled text. I don't know why it needs markup.
-To be be conservative, I'll give it the tag 'n' for 'normal'.
-
-:code:`<r><rPr><b/></rPr><t>` --> :code:`<b>`
-
-Because obviously.
-
-:code:`<r><rPr><i/></rPr><t>` --> :code:`<i>`
-
-Because obviously.
-
-Leaving aside the section properties for now, here is the new markup::
+Leaving aside the schemas and section properties for now,
+here is the new markup::
 
     <docx>
      <body>
@@ -491,3 +558,9 @@ Not bad. Let's build ourselves a compiler.
 Obviously, I need to touch up the preserve spacing,
 but pop the output into the archive and you've
 got yourself a working docx compiler. Huzzah!
+
+What next?
+----------
+
+Formatting, styles, a dedicated parser and compiler.
+Sky's the limit.

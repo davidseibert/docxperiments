@@ -1,2 +1,0 @@
-# docxperiments
-Experiments in OOXML.
