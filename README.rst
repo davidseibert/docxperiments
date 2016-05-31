@@ -451,45 +451,43 @@ here is the new markup::
 
 Not bad. Let's build ourselves a compiler.
 
-.. highlight:: python
-
-::
-
-    import os, difflib
-    from bs4 import BeautifulSoup
-    simplified_doc_xml = \
-        os.path.realpath(
-            '../../../synthesis/stages/'
-            '13.8-documentxml_redundant_runs_removed'
-            '/decomposed/word/document.xml')
-    with open(simplified_doc_xml) as f:
-        target_markup = f.read()
-    with open('docx_boilerplate.xml', 'r') as f:
-        docx_boilerplate = f.read()[:-1]
-    with open('section_properties.xml', 'r') as f:
-        section_properties = f.read()
-    with open('test_markup.xml', 'r') as f:
-        test_markup = f.read()
-    replacements = [
-        ('<n>', '<w:r><w:t xml:space="preserve">'),
-        ('<b>', '<w:r><w:rPr><w:b/></w:rPr><w:t>'),
-        ('<i>', '<w:r><w:rPr><w:i/></w:rPr><w:t>'),
-        ('</n>', '</w:t></w:r>'),
-        ('</b>', '</w:t></w:r>'),
-        ('</i>', '</w:t></w:r>'),
-        ('<p>', '<w:p>'),
-        ('</p>', '</w:p>'),
-        ('<sectionProperties/>', section_properties),
-        ('<body>', '<w:body>'),
-        ('</body>', '</w:body>'),
-        ('<docx>', docx_boilerplate),
-        ('</docx>', '</w:document>'),
-        ]
-    intermediate = test_markup
-    for i, j in replacements:
-        intermediate = intermediate.replace(i, j)
-    with open('output.xml', 'w') as f:
-        f.write(intermediate)
+```python
+import os, difflib
+from bs4 import BeautifulSoup
+simplified_doc_xml = \
+    os.path.realpath(
+        '../../../synthesis/stages/'
+        '13.8-documentxml_redundant_runs_removed'
+        '/decomposed/word/document.xml')
+with open(simplified_doc_xml) as f:
+    target_markup = f.read()
+with open('docx_boilerplate.xml', 'r') as f:
+    docx_boilerplate = f.read()[:-1]
+with open('section_properties.xml', 'r') as f:
+    section_properties = f.read()
+with open('test_markup.xml', 'r') as f:
+    test_markup = f.read()
+replacements = [
+    ('<n>', '<w:r><w:t xml:space="preserve">'),
+    ('<b>', '<w:r><w:rPr><w:b/></w:rPr><w:t>'),
+    ('<i>', '<w:r><w:rPr><w:i/></w:rPr><w:t>'),
+    ('</n>', '</w:t></w:r>'),
+    ('</b>', '</w:t></w:r>'),
+    ('</i>', '</w:t></w:r>'),
+    ('<p>', '<w:p>'),
+    ('</p>', '</w:p>'),
+    ('<sectionProperties/>', section_properties),
+    ('<body>', '<w:body>'),
+    ('</body>', '</w:body>'),
+    ('<docx>', docx_boilerplate),
+    ('</docx>', '</w:document>'),
+    ]
+intermediate = test_markup
+for i, j in replacements:
+    intermediate = intermediate.replace(i, j)
+with open('output.xml', 'w') as f:
+    f.write(intermediate)
+```
 
 Pop the output into the archive and you've
 got yourself a working (albeit naive) docx compiler. Huzzah!
