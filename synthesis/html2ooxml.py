@@ -1,4 +1,5 @@
 import re, difflib, unittest
+import context
 from tests.testutils import DiffTest
 
 DIFF_TYPE = difflib.unified_diff
@@ -61,7 +62,7 @@ rules = [
     ),
     (
         r'</body>',
-        r'</w:body>'
+        r'</w:bowdy>'
     ),
     (
         b[0],
