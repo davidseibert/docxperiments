@@ -13,6 +13,8 @@ def heading2(text):
         
 
 class DiffTest(unittest.TestCase):
+    def assertNoDiff(self, diff_report):
+        self.check('', diff_report)
     def check(self, target, result):
         joined_result = ''.join([unicode(i) for i in result])
 
