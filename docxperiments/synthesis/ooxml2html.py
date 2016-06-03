@@ -1,11 +1,15 @@
-import re, difflib, unittest
+import difflib
+import re
+import unittest
+
+from docxperiments.analysis.pathutils import TESTDATA_DIR, mkpath
 from tests.testutils import DiffTest
 
 OOXML_FILE = 'simplified.oo.xml'
+TARGET_SOURCE_PATH = mkpath(TESTDATA_DIR, 'input.html')
+INPUT_SOURCE_PATH = mkpath(TESTDATA_DIR, 'input.html')
 
 DIFF_TYPE = difflib.unified_diff
-INPUT_SOURCE_PATH = 'simplified.oo.xml'
-TARGET_SOURCE_PATH = 'input.html'
 
 with open(TARGET_SOURCE_PATH) as f:
     TARGET = f.read()

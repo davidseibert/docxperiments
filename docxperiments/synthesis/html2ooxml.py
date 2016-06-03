@@ -1,11 +1,14 @@
-import re, difflib, unittest
-import context
+import difflib
+import re
+import unittest
+
+from docxperiments.analysis.pathutils import TESTDATA_DIR, mkpath
 from tests.testutils import DiffTest
 
 DIFF_TYPE = difflib.unified_diff
 
-TARGET_SOURCE_PATH = 'simplified.oo.xml'
-INPUT_SOURCE_PATH = 'input.html'
+TARGET_SOURCE_PATH = mkpath(TESTDATA_DIR, 'simplified.oo.xml')
+INPUT_SOURCE_PATH = mkpath(TESTDATA_DIR, 'input.html')
 
 with open(TARGET_SOURCE_PATH) as f:
     TARGET = f.read()
@@ -62,7 +65,7 @@ rules = [
     ),
     (
         r'</body>',
-        r'</w:bowdy>'
+        r'</w:body>'
     ),
     (
         b[0],

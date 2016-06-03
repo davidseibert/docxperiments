@@ -1,8 +1,10 @@
 # coding: utf-8
 
-import context, testutils, unittest
+import unittest
+
+import testutils
 from docxperiments import dirdiff
-import filecmp
+
 
 class DirDiffTest(unittest.TestCase):
     maxDiff = None

@@ -2,10 +2,10 @@
 
 from unittest import TestSuite
 import unittest
-import context
+import docxperiments.synthesis.context
 from tests.testutils import CustomResult
-from html2ooxml import Html2OOXMLTest
-from ooxml2html import OOXML2HTMLTest
+from docxperiments.synthesis.html2ooxml import Html2OOXMLTest
+from docxperiments.synthesis.ooxml2html import OOXML2HTMLTest
 
 def run_synth_suite():
     suite = unittest.TestLoader().loadTestsFromTestCase(Html2OOXMLTest)

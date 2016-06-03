@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 
 # stdlib
-import sys, logging, os
+import logging
+import os
+import sys
 from zipfile import ZipFile
 
 # config import path
 sys.path.append('/Users/david/dev/docxperiments')
 
 # local modules
-from docxperiments.pathutils import mkpath, ls, mkrel
+from docxperiments.analysis.pathutils import mkpath, ls, mkrel
 
 # set up logger
 log_format = 'undx: %(message)s'

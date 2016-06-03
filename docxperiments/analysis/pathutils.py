@@ -2,21 +2,23 @@
 
 import os
 
-def _save_path(*args):
+def mkpath(*args):
     return os.path.join(*args)
 
-PACKAGE_DIR = _save_path(os.path.dirname(__file__))
-PROJECT_DIR = _save_path(os.path.dirname(PACKAGE_DIR))
-DATA_DIR = _save_path(PACKAGE_DIR, 'data')
-SPECIMENS_DIR = _save_path(DATA_DIR, 'specimens')
-EXPERIMENTS_DIR = _save_path(DATA_DIR, 'experiments')
+ANALYSIS_DIR = mkpath(os.path.dirname(__file__))
+PACKAGE_DIR = mkpath(os.path.dirname(ANALYSIS_DIR))
+PROJECT_DIR = mkpath(os.path.dirname(PACKAGE_DIR))
+DATA_DIR = mkpath(ANALYSIS_DIR, 'data')
+TESTS_DIR = mkpath(PROJECT_DIR, 'tests')
+TESTDATA_DIR = mkpath(TESTS_DIR, 'testdata')
+SPECIMENS_DIR = mkpath(DATA_DIR, 'specimens')
+EXPERIMENTS_DIR = mkpath(DATA_DIR, 'experiments')
+
 
 def mkdir(path):
     if not os.path.exists(path):
         os.mkdir(path)
 
-def mkpath(*args):
-    return os.path.join(*args)
 
 def mkrel(path, other):
     if isinstance(path, basestring):

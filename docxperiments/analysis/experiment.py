@@ -1,10 +1,12 @@
 # coding: utf-8
 
-import dirdiff, filediff
 import logging
 
+import dirdiff
+import filediff
+
 # convenience aliases for os.path functions
-from pathutils import mkdir, mkpath, experiments_abs, experiments_rel
+from pathutils import mkdir, mkpath, experiments_abs
 from specimen import Specimen
 LEFT = 0
 RIGHT = 1
@@ -59,7 +61,7 @@ class Experiment (object):
         return common
     def get_changed(self):
         changed = [f for f in self.get_common()
-                if filediff.changed(self._left(f), self._right(f))]
+                   if filediff.changed(self._left(f), self._right(f))]
         self.logger.info("Got changed files: {}".format(changed))
         return changed
 

@@ -1,5 +1,8 @@
-from docxperiments import operator, experiment
 import logging
+
+from docxperiments import experiment
+from docxperiments.analysis import operator
+
 log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 logging.basicConfig(filename="run.log", level=logging.INFO, format=log_format, filemode="w")
 

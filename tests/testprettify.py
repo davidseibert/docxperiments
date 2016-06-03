@@ -1,7 +1,10 @@
 # coding: utf-8
 
-import context, testutils, unittest
+import unittest
+
+import testutils
 from docxperiments import prettify
+
 
 class PrettifyTest(unittest.TestCase):
 
